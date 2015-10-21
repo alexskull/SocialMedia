@@ -3,25 +3,25 @@ $this->layout = "./layouts/main_layout.php";
 $content = function(){ ?>
 <section id="hero_2">
     <div class="intro_title animated fadeInDown">
-        <h1>Place your order</h1>
+        <h1><?= Label::confirma_participacion ?></h1>
         <div class="bs-wizard">
             
             <div class="col-xs-4 bs-wizard-step active">
-                <div class="text-center bs-wizard-stepnum">Your cart</div>
+                <div class="text-center bs-wizard-stepnum"><?= Label::tu_evento ?></div>
                 <div class="progress"><div class="progress-bar"></div></div>
                 <a href="#" class="bs-wizard-dot"></a>
             </div>
             
             <div class="col-xs-4 bs-wizard-step disabled">
-                <div class="text-center bs-wizard-stepnum">Your details</div>
+                <div class="text-center bs-wizard-stepnum"><?= Label::tus_detalles ?></div>
                 <div class="progress"><div class="progress-bar"></div></div>
-                <a href="payment_hotel.html" class="bs-wizard-dot"></a>
+                <a href="" class="bs-wizard-dot"></a>
             </div>
             
             <div class="col-xs-4 bs-wizard-step disabled">
-                <div class="text-center bs-wizard-stepnum">Finish!</div>
+                <div class="text-center bs-wizard-stepnum"><?= Label::ya_esta ?></div>
                 <div class="progress"><div class="progress-bar"></div></div>
-                <a href="confirmation_hotel.html" class="bs-wizard-dot"></a>
+                <a href="" class="bs-wizard-dot"></a>
             </div>  
             
         </div>  <!-- End bs-wizard --> 
@@ -41,163 +41,45 @@ $content = function(){ ?>
 <div class="container margin_60">
     <div class="row">
         <div class="col-md-8">
-            <div class="alert alert-info" role="alert"><strong>Rooms available</strong> for the selected dates.<br>PLEASE SELECT YOUR QUANTITY.</div>
-            <table class="table table-striped cart-list add_bottom_30">
-                <thead>
-                    <tr>
-                        <th>
-                            Room Type
-                        </th>
-                        <th>
-                            Quantity
-                        </th>
-                        <th>
-                            Per night
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="thumb_cart">
-                                <a href="#" data-toggle="modal" data-target="#modal_single_room"><img src="img/thumb_cart_1.jpg" alt=""></a>
-                            </div>
-                            <span class="item_cart"><a href="#" data-toggle="modal" data-target="#modal_single_room">Single Room</a></span>
-                        </td>
-                        <td>
-                            <div class="numbers-row">
-                                <input type="text" value="0" id="quantity_1" class="qty2 form-control" name="quantity_1">
-                            </div>
-                        </td>
-                        <td>
-                            <strong>€80</strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="thumb_cart">
-                                <a href="#" data-toggle="modal" data-target="#modal_double_room"><img src="img/thumb_cart_1.jpg" alt=""></a>
-                            </div>
-                            <span class="item_cart"><a href="#" data-toggle="modal" data-target="#modal_double_room">Double room</a></span>
-                        </td>
-                        <td>
-                            <div class="numbers-row">
-                                <input type="text" value="0" id="quantity_2" class="qty2 form-control" name="quantity_2">
-                            </div>
-                        </td>
-                        <td>
-                            <strong>€130</strong>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-striped options_cart">
-                <thead>
-                    <tr>
-                        <th colspan="3">
-                            Add options / Services
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <i class="icon_set_1_icon-26"></i>
-                        </td>
-                        <td>
-                            Pick up service <strong>+$34*</strong>
-                        </td>
-                        <td>
-                            <label class="switch-light switch-ios pull-right">
-                                <input type="checkbox" name="option_2" id="option_2" value="">
-                                <span>
-                                    <span>No</span>
-                                    <span>Yes</span>
-                                </span>
-                                <a></a>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <i class="icon_set_1_icon-15"></i>
-                        </td>
-                        <td>
-                            Welcome bottle <strong>+$24</strong>
-                        </td>
-                        <td>
-                            <label class="switch-light switch-ios pull-right">
-                                <input type="checkbox" name="option_4" id="option_4" value="" checked>
-                                <span>
-                                    <span>No</span>
-                                    <span>Yes</span>
-                                </span>
-                                <a></a>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <i class="icon_set_1_icon-59"></i>
-                        </td>
-                        <td>
-                            Coffe break <strong>+$12*</strong>
-                        </td>
-                        <td>
-                            <label class="switch-light switch-ios pull-right">
-                                <input type="checkbox" name="option_5" id="option_5" value="" checked>
-                                <span>
-                                    <span>No</span>
-                                    <span>Yes</span>
-                                </span>
-                                <a></a>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <i class="icon_set_1_icon-58"></i>
-                        </td>
-                        <td>
-                            Dinner <strong>+$26*</strong>
-                        </td>
-                        <td>
-                            <label class="switch-light switch-ios pull-right">
-                                <input type="checkbox" name="option_6" id="option_6" value="">
-                                <span>
-                                    <span>No</span>
-                                    <span>Yes</span>
-                                </span>
-                                <a></a>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <i class="icon_set_1_icon-40"></i>
-                        </td>
-                        <td>
-                            Bike rent <strong>+$26*</strong>
-                        </td>
-                        <td>
-                            <label class="switch-light switch-ios pull-right">
-                                <input type="checkbox" name="option_7" id="option_7" value="">
-                                <span>
-                                    <span>No</span>
-                                    <span>Yes</span>
-                                </span>
-                                <a></a>
-                            </label>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <small>* Prices for person.</small>    
+            <div class="alert alert-info" role="alert"><?= Message::info_previsualizar_evento ?></div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3><?= Label::descripcion ?></h3>
+                    
+                </div>
+                <div class="col-md-9">
+                    <p>
+                        Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.
+                        Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.
+                        Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.
+                    </p>
+                    <h4><?= Label::lugar_fecha ?></h4>
+                    <p> <i class="icon-calendar"></i><strong> <?= Label::fecha ?></strong>: 13/12/2015<br>
+                        <i class="icon-clock"></i><strong> <?= Label::hora ?></strong>: 20:00 - 02:00<br>
+                        <i class="icon-location-5"></i><strong> <?= Label::lugar ?></strong>: Barcelona, Anzoátegui <br>
+                        <i class="icon-location-5"></i><strong> <?= Label::lugar_encuentro ?></strong>: Puerto La Cruz, Anzoátegui                   
+                    <h4><?= Label::pagina_web ?></h4>
+                    <p> <i class=" icon-website"></i><strong><a href="http://www.holatv.com">www.holatv.com</a></strong><br></p>
+                </div><!-- End col-md-9  -->
+            </div><!-- End row  -->
+            
+            <hr>
+            
+            <div class="row">
+                <div class="col-md-3">
+                    <h3><?= Label::informacion_adicional ?></h3>
+                </div>
+                <div class="col-md-9">
+                    Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.
+                    Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.
+                    Lorem 
+                </div><!-- End col-md-9  -->
+            </div><!-- End row  -->  
         </div><!-- End col-md-8 -->
         
         <aside class="col-md-4">
             <div class="box_style_1">
-                <h3 class="inner">- Summary -</h3>
+                <h3 class="inner">- <?= Label::resumen ?> -</h3>
                 <table class="table table_summary">
                     <tbody>
                         <tr>

@@ -1,8 +1,8 @@
 <?php
 class Settings {
-    const WEB_HOST_URL = "http://startup-xpress.com/eventos/";  
+    const WEB_HOST_URL = "http://localhost/Eventos/";  
     const WEB_SERVICES_URL = "";  
-    const HOST_URL = "startup-xpress.com/eventos/"; 
+    const HOST_URL = "localhost/Eventos"; 
     const URL_SLASHES = 5;
     const SERVER_TIMEZONE = "America/Caracas";
     const SESSION_TIMEOUT = 1800;

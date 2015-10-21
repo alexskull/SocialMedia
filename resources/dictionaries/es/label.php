@@ -7,6 +7,7 @@ class Label {
     
     const cerrar_sesion = "Cerrar sesión";    
     const comentarios = "Comentarios";
+    const confirma_participacion = "Confirma tu participación";
     const confirmar_contraseña = "Confirmar contraseña";
     const contraseña = "Contraseña";
     const correo = "Correo";
@@ -77,8 +78,12 @@ class Label {
     const recuperar_contraseña = "Recuperar contraseña";
     const registrate = "Regístrate";
     const responder = "Responder";
+    const resumen = "Resumen";
     
     const todos = "Todos";
+    const tu_evento = "Tu evento";
+    const tus_detalles = "Tus detalles";
+    
     
     const ultimos_eventos = "<span>Últimos</span> eventos";
     const usuario = "Usuario";
@@ -91,4 +96,6 @@ class Label {
     const ver_perfil = "Ver perfil";
     const ver_todos_eventos = "Ver todos los eventos";
     const visita_nuestro_blog = "Visita nuestro blog";
+    
+    const ya_esta = "¡Ya está!";
 }
