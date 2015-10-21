@@ -10,4 +10,5 @@ class Message {
     const info_sesion_comentario = "Necesitas iniciar sesión para comentar";
     const info_participantes_inscritos = "En estos momentos tenemos: ";
     const info_previsualizar_evento = "<strong>¡Este es el evento en el que quieres participar!</strong><br> Revisa atentamente tu reserva y si estás conforme continua con el proceso. ";
+    const info_uso_datos_usuario = "Se usarán los datos registrados en tu cuenta de usuario para hacer la transacción. <br>Si quieres editarlos, ¡este es un buen momento para hacerlo!";
 }

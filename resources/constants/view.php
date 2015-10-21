@@ -58,10 +58,15 @@ class View {
                 $include = $response->view == null ? "./views/$action.php": "./views/$response->view.php";  
                 
                 include($include);
+                $layout = $this->layout;
+                do {
+                    $layout = $this->layout;
+                    if(isset($this->layout)){
+                        include($this->layout);
+                    }
+                    
+                } while(isset($this->layout) && $this->layout != $layout);
                 
-                if(isset($this->layout)){
-                    include($this->layout);
-                }
                 
                 return $include;
             }

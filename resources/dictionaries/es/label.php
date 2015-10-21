@@ -1,6 +1,7 @@
 <?php
 class Label {
     const ayuda = "Ayuda";
+    const apellidos = "Apellidos";
     
     const basado_en_puntuaciones = "Basado en {0} puntuaciones";
     const blog_ultimas_entradas = "<span>Últimas entradas</span> en nuestro blog";
@@ -9,10 +10,10 @@ class Label {
     const comentarios = "Comentarios";
     const confirma_participacion = "Confirma tu participación";
     const confirmar_contraseña = "Confirmar contraseña";
+    const confirmar_correo = "Confirmar correo";
     const contraseña = "Contraseña";
     const correo = "Correo";
     const crea_tu_cuenta = "Crea tu cuenta";
-    const lugar_fecha = "Lugar y fecha del evento";
     
     const deja_comentario = "Deja un comentario";
     const descripcion = "Descripción";
@@ -21,6 +22,7 @@ class Label {
     
     const enviar_correo_activacion = "Enviar correo de activación";
     const español = "Español";
+    const evento = "Evento";
     const eventos = "Eventos";
     
     const fecha = "Fecha";
@@ -41,14 +43,18 @@ class Label {
     const inscripcion = "Inscripción";
     
     const limpiar = "Limpiar";
-    const lugar = "Lugar";
-    const lugar_encuentro = "Lugar de encuentro";
+    const lugar = "Lugar";    
+    const lugar_encuentro = "Lugar de encuentro";    
+    const lugar_fecha = "Lugar y fecha del evento";
     
     const mayor_relevancia = "Mayor relevancia";
     const mas_participantes = "Más participantes";
     const me_gusta = "Me gusta";
     const menor_relevancia = "Menor relevancia";
     const menos_participantes = "Menos participantes";
+    const modifica_busqueda = "Modifica tu búsqueda";
+    
+    const nombres = "Mombres";
     
     const o = "ó";
     const ordenar_por_cantidad_inscritos = "Ordenar por nº de inscritos";
@@ -80,9 +86,11 @@ class Label {
     const responder = "Responder";
     const resumen = "Resumen";
     
+    const siguiente_paso = "Siguiente";
     const todos = "Todos";
+    const total = "Total";
     const tu_evento = "Tu evento";
-    const tus_detalles = "Tus detalles";
+    const tus_datos = "Tus datos";
     
     
     const ultimos_eventos = "<span>Últimos</span> eventos";

@@ -1,33 +1,7 @@
 <?php
-$this->layout = "./layouts/main_layout.php";
-$content = function(){ ?>
-<section id="hero_2">
-    <div class="intro_title animated fadeInDown">
-        <h1><?= Label::confirma_participacion ?></h1>
-        <div class="bs-wizard">
-            
-            <div class="col-xs-4 bs-wizard-step active">
-                <div class="text-center bs-wizard-stepnum"><?= Label::tu_evento ?></div>
-                <div class="progress"><div class="progress-bar"></div></div>
-                <a href="#" class="bs-wizard-dot"></a>
-            </div>
-            
-            <div class="col-xs-4 bs-wizard-step disabled">
-                <div class="text-center bs-wizard-stepnum"><?= Label::tus_detalles ?></div>
-                <div class="progress"><div class="progress-bar"></div></div>
-                <a href="" class="bs-wizard-dot"></a>
-            </div>
-            
-            <div class="col-xs-4 bs-wizard-step disabled">
-                <div class="text-center bs-wizard-stepnum"><?= Label::ya_esta ?></div>
-                <div class="progress"><div class="progress-bar"></div></div>
-                <a href="" class="bs-wizard-dot"></a>
-            </div>  
-            
-        </div>  <!-- End bs-wizard --> 
-    </div>   <!-- End intro-title --> 
-</section><!-- End Section hero_2 -->
-
+$this->layout = "./layouts/payment_layout.php";
+$paso = 1;
+$content_payment = function(){ ?>
 <div id="position">
     <div class="container">
         <ul>
@@ -42,6 +16,7 @@ $content = function(){ ?>
     <div class="row">
         <div class="col-md-8">
             <div class="alert alert-info" role="alert"><?= Message::info_previsualizar_evento ?></div>
+            <h2>Titulo del evento</h3>
             <div class="row">
                 <div class="col-md-3">
                     <h3><?= Label::descripcion ?></h3>
@@ -83,79 +58,33 @@ $content = function(){ ?>
                 <table class="table table_summary">
                     <tbody>
                         <tr>
-                            <td>
-                                Check in
-                            </td>
-                            <td class="text-right">
-                                10 April 2015
-                            </td>
+                            <td><?= Label::evento ?></td>
+                            <td class="text-right">Evento de Prueba</td>
                         </tr>
                         <tr>
-                            <td>
-                                Check out
-                            </td>
-                            <td class="text-right">
-                                12 April 2015
-                            </td>
+                            <td><?= Label::fecha ?></td>
+                            <td class="text-right">13/12/2015</td>
                         </tr>
                         <tr>
-                            <td>
-                                Rooms
-                            </td>
-                            <td class="text-right">
-                                1 double room
-                            </td>
+                            <td><?= Label::hora ?></td>
+                            <td class="text-right">20:00 - 02:00</td>
                         </tr>
                         <tr>
-                            <td>
-                                Nights
-                            </td>
-                            <td class="text-right">
-                                2
-                            </td>
+                            <td><?= Label::lugar ?></td>
+                            <td class="text-right">Barcelona, Anzoátegui </td>
                         </tr>
                         <tr>
-                            <td>
-                                Adults
-                            </td>
-                            <td class="text-right">
-                                2
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Children
-                            </td>
-                            <td class="text-right">
-                                0
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Welcome bottle
-                            </td>
-                            <td class="text-right">
-                                $34
-                            </td>
+                            <td><?= Label::lugar_encuentro ?></td>
+                            <td class="text-right">Puerto La Cruz, Anzoátegui</td>
                         </tr>
                         <tr class="total">
-                            <td>
-                                Total cost
-                            </td>
-                            <td class="text-right">
-                                $154
-                            </td>
+                            <td><?= Label::total ?></td>
+                            <td class="text-right">$25<td>
                         </tr>
                     </tbody>
                 </table>
-                <a class="btn_full" href="payment_hotel.html">Book now</a>
-                <a class="btn_full_outline" href="single_hotel.html"><i class="icon-right"></i> Modify your search</a>
-            </div>
-            <div class="box_style_4">
-                <i class="icon_set_1_icon-57"></i>
-                <h4>Need <span>Help?</span></h4>
-                <a href="tel://004542344599" class="phone">+45 423 445 99</a>
-                <small>Monday to Friday 9.00am - 7.30pm</small>
+                <a class="btn_full" href="<?= Settings::WEB_HOST_URL ?>participate/details"><?= Label::siguiente_paso ?></a>
+                <a class="btn_full_outline" href="<?= Settings::WEB_HOST_URL ?>events/activity"><i class="icon-right"></i><?= Label::modifica_busqueda ?></a>
             </div>
         </aside><!-- End aside -->
         

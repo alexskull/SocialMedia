@@ -15,4 +15,7 @@ class Participate {
     function Review(){
         return View("participate/review");
     }
+    function Details(){
+        return View("participate/details");
+    }
 }

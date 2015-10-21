@@ -228,7 +228,9 @@
                 </div>
             </div><!-- container -->
         </header><!-- End Header -->
-        <?= $content(); ?>
+        <?= 
+        $content(); 
+        ?>
         
         <footer>
             <div class="container">
