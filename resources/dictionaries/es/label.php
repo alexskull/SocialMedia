@@ -6,8 +6,10 @@ class Label {
     const basado_en_puntuaciones = "Basado en {0} puntuaciones";
     const blog_ultimas_entradas = "<span>Últimas entradas</span> en nuestro blog";
     
-    const cerrar_sesion = "Cerrar sesión";    
+    const cerrar_sesion = "Cerrar sesión"; 
+    const codigo_postal = "Código postal";
     const comentarios = "Comentarios";
+    const comprobante = "Comprobante";
     const confirma_participacion = "Confirma tu participación";
     const confirmar_contraseña = "Confirmar contraseña";
     const confirmar_correo = "Confirmar correo";
@@ -19,16 +21,22 @@ class Label {
     const descripcion = "Descripción";
     const desde = "Desde";
     const detalles = "Detalles";
+    const direccion = "Dirección";
+    const direccion_facturacion = "Dirección de Facturación";
     
     const enviar_correo_activacion = "Enviar correo de activación";
+    const error = "Error";    
     const español = "Español";
     const evento = "Evento";
     const eventos = "Eventos";
     
     const fecha = "Fecha";
+    const fecha_compra = "Fecha de compra";
     const fecha_evento = "Fecha del evento";
     const filtros = "Filtros";
+    const forma_pago = "Forma de pago";
     
+    const gracias = "¡Gracias!";
     const gratis = "Gratis";
     
     const hasta = "Hasta";
@@ -52,11 +60,13 @@ class Label {
     const me_gusta = "Me gusta";
     const menor_relevancia = "Menor relevancia";
     const menos_participantes = "Menos participantes";
+    const metodos_pago = "Métodos de pago";
     const modifica_busqueda = "Modifica tu búsqueda";
     
     const nombres = "Mombres";
     
     const o = "ó";
+    const orden = "Orden";
     const ordenar_por_cantidad_inscritos = "Ordenar por nº de inscritos";
     const ordenar_por_fecha = "Ordenar por fecha";
     const ordenar_por_publicacion = "Ordenar por publicación";
@@ -64,14 +74,22 @@ class Label {
     const organizado_por = "<span>Organizado</span> por";
     const otros_eventos_populares = "Otros eventos <span>populares</span>";
     
+    const pagar_tdc = "Pagar con tarjeta de crédito";
+    const pagar_paypal = "Pagar con Paypal";
     const pagina_web = "Página Web";
+    const pais = "País";
     const palabras_clave = "Palabras clave";
+    const participante = "Participante";
     const participar = "Participar";
     const participantes_inscritos = "Participantes inscritos";
     const pasados = "Pasados";
+    const poblacion = "Población";
     const poblaciones = "Poblaciones";
-    const populares = "populares";
+    const politicas_pago = "Políticas de pago";
+    const populares = "Populares";
+    const post_recientes = "Post recientes";
     const pregunta_olvidaste_contraseña = "¿Olvidaste tu contraseña?";
+    const provincia = "Provincia";
     const provincias = "Provincias";
     const proximos = "Próximos ";
     const publicaciones_antiguas = "Publicaciones antiguas";
@@ -85,13 +103,18 @@ class Label {
     const registrate = "Regístrate";
     const responder = "Responder";
     const resumen = "Resumen";
+    const resumen_compra = "Resumen de la compra";
     
-    const siguiente_paso = "Siguiente";
+    const selecciona_pais = "Selecciona tu país";
+    const selecciona_poblacion = "Selecciona tu población";
+    const selecciona_provincia = "Selecciona tu provincia";
+    const siguiente = "Siguiente";
+    
+    const tips = "Tips";
     const todos = "Todos";
     const total = "Total";
     const tu_evento = "Tu evento";
-    const tus_datos = "Tus datos";
-    
+    const tus_datos = "Tus datos";    
     
     const ultimos_eventos = "<span>Últimos</span> eventos";
     const usuario = "Usuario";
@@ -99,11 +122,13 @@ class Label {
     
     const ver_categorias = "Ver categorías";
     const ver_en_mapa = "Ver en el mapa";
+    const ver_comprobante = "Ver comprobante";
     const ver_mas = "Ver más";
     const ver_mensajes = "Ver mensajes";
     const ver_perfil = "Ver perfil";
     const ver_todos_eventos = "Ver todos los eventos";
     const visita_nuestro_blog = "Visita nuestro blog";
+    const volver_evento = "Volver al evento";
     
     const ya_esta = "¡Ya está!";
 }

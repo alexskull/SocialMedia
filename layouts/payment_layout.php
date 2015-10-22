@@ -3,7 +3,7 @@ $this->layout = "./layouts/main_layout.php";
 $content = function() use ($paso, $content_payment){ ?>
 <section id="hero_2">
     <div class="intro_title animated fadeInDown">
-        <h1><?= Label::confirma_participacion ?></h1>
+        <h1><?= $paso == 4 ? Message::info_error_compra : Label::confirma_participacion ?></h1>
         <div class="bs-wizard">            
             <div class="col-xs-4 bs-wizard-step <?= $paso == 1 ? "active": "complete" ?>">
                 <div class="text-center bs-wizard-stepnum"><?= Label::tu_evento ?></div>
@@ -17,8 +17,8 @@ $content = function() use ($paso, $content_payment){ ?>
                 <a href="<?= Settings::WEB_HOST_URL ?>participate/details" class="bs-wizard-dot"></a>
             </div>
             
-            <div class="col-xs-4 bs-wizard-step <?= $paso != 3 ? "disabled": "active" ?>">
-                <div class="text-center bs-wizard-stepnum"><?= Label::ya_esta ?></div>
+            <div class="col-xs-4 bs-wizard-step <?= $paso != 3 && $paso != 4 ? "disabled": "active" ?>">
+                <div class="text-center bs-wizard-stepnum"><?= $paso == 4 ? Label::error : Label::ya_esta ?></div>
                 <div class="progress"><div class="progress-bar"></div></div>
                 <a href="" class="bs-wizard-dot"></a>
             </div>  

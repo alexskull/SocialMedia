@@ -83,7 +83,7 @@ $content_payment = function(){ ?>
                         </tr>
                     </tbody>
                 </table>
-                <a class="btn_full" href="<?= Settings::WEB_HOST_URL ?>participate/details"><?= Label::siguiente_paso ?></a>
+                <a class="btn_full" href="<?= Settings::WEB_HOST_URL ?>participate/details"><?= Label::siguiente ?></a>
                 <a class="btn_full_outline" href="<?= Settings::WEB_HOST_URL ?>events/activity"><i class="icon-right"></i><?= Label::modifica_busqueda ?></a>
             </div>
         </aside><!-- End aside -->

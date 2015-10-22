@@ -80,7 +80,7 @@
                                         <li><a href="single_tour.html">Single tour page</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="<?= Settings::WEB_HOST_URL ?>"><?= Label::visita_nuestro_blog ?></a></li>
+                                <li><a href="<?= Settings::WEB_HOST_URL ?>blog"><?= Label::visita_nuestro_blog ?></a></li>
                                 <!--<li class="submenu">
                                     <a href="javascript:void(0);" class="show-submenu">Tours <i class="icon-down-open-mini"></i></a>
                                     <ul>
