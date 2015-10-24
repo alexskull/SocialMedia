@@ -1,9 +1,10 @@
 <?php
 class View {
-    public $model, $title, $body, $view, $lang;
+    public $model, $title, $body, $view, $lang, $header;
     
     function __construct($lang) {
         $this->model = new stdClass();
+        $this->header = false;
         $this->title = "";
         $this->lang = $lang;
     }

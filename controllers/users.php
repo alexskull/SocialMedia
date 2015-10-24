@@ -18,4 +18,7 @@ class Users {
         $recover->recuperar = false;
         return View("users/recover", $recover);
     }
+    public function profile(){
+        return View("users/profile");
+    }
 }

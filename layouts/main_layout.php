@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="layer"></div>
-        <header id = "colored">
+        <header id = "<?=$this->header ? "plain" : "colored" ?>">
             <div id="top_line">
                 <div class="container">
                     <div class="row">

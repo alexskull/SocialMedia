@@ -193,3 +193,13 @@ a#close_in {display:block;position:absolute;right:15px;top:10px;width:20px;heigh
 #close_in i{color:#555 !important;font-size:16px;}
 
 }
+/*Personalizado*/
+header#plain.sticky {
+    background-color: #45A4DF;
+    padding-bottom: 0;
+    border-bottom: 2px solid #45A4DF;
+}
+header#plain.sticky .main-menu > ul > li > a,
+header#plain.sticky ul#top_tools a{
+    color: white;
+}

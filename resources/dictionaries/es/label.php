@@ -28,7 +28,8 @@ class Label {
     const error = "Error";    
     const español = "Español";
     const evento = "Evento";
-    const eventos = "Eventos";
+    const eventos = "Eventos";    
+    const eventos_pasados = "Eventos pasados";
     
     const fecha = "Fecha";
     const fecha_compra = "Fecha de compra";
@@ -92,12 +93,14 @@ class Label {
     const provincia = "Provincia";
     const provincias = "Provincias";
     const proximos = "Próximos ";
+    const proximos_eventos = "Próximos eventos";
     const publicaciones_antiguas = "Publicaciones antiguas";
     const publicaciones_recientes = "Publicaciones recientes";
     const publicado_por = "Publicado por";
     const publicar_comentario = "Publicar comentario";
     const publicar_evento = "Publicar evento";
     const puntuacion_participantes = "Puntuación de nuestros participantes";
+    const puntuacion_eventos_organizados = "Puntuación a los eventos organizados";
     
     const recuperar_contraseña = "Recuperar contraseña";
     const registrate = "Regístrate";
@@ -105,6 +108,7 @@ class Label {
     const resumen = "Resumen";
     const resumen_compra = "Resumen de la compra";
     
+    const sigueme = "Sígueme";
     const selecciona_pais = "Selecciona tu país";
     const selecciona_poblacion = "Selecciona tu población";
     const selecciona_provincia = "Selecciona tu provincia";
