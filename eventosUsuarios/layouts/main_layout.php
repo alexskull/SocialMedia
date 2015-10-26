@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="fixed">
+<html class="fixed <?= $this->collapsed ? "sidebar-left-collapsed" : "" ?> ">
     <head>
         
         <!-- Basic -->
@@ -189,19 +189,23 @@
                         <div class="nano-content">
                             <nav id="menu" class="nav-main" role="navigation">
                                 <ul class="nav nav-main">
-                                    <li>
-                                        <a href="index.html">
+                                    <?php if (strlen($this->session) >= 1 && substr($this->session, -1, 1) == "1"){ ?>
+                                    <li class = "<?= substr($this->active, -1, 1) == "1" ? "nav-active" : "" ?>">
+                                        <a href="<?= Settings::WEB_HOST_URL ?>">
                                             <i class="fa fa-home" aria-hidden="true"></i>
-                                            <span>Dashboard</span>
+                                            <span><?= $this->section_title = Label::inicio ?></span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="mailbox-folder.html">
+                                    <?php } 
+                                    if (substr(strlen($this->session) >= 2 && $this->session, -2, 1) == "1"){  ?>                                    
+                                    <li class = "<?= substr($this->active, -2, 1) == "1" ? "nav-active" : "" ?>">
+                                        <a href="<?= Settings::WEB_HOST_URL ?>mailbox">
                                             <span class="pull-right label label-primary">182</span>
                                             <i class="fa fa-envelope" aria-hidden="true"></i>
-                                            <span>Mailbox</span>
+                                             <span><?= $this->section_title = Label::buzon_mensajes ?></span>
                                         </a>
                                     </li>
+                                    <?php } ?>
                                     <li class="nav-parent">
                                         <a>
                                             <i class="fa fa-copy" aria-hidden="true"></i>
@@ -710,17 +714,18 @@
                     
                 <section role="main" class="content-body">
                     <header class="page-header">
-                        <h2>Default Layout</h2>
+                        <h2><?= $this->section_title ?></h2>
                             
                         <div class="right-wrapper pull-right">
                             <ol class="breadcrumbs">
                                 <li>
-                                    <a href="index.html">
+                                    <a href="<?= Settings::WEB_HOST_URL ?>">
                                         <i class="fa fa-home"></i>
                                     </a>
                                 </li>
-                                <li><span>Layouts</span></li>
-                                <li><span>Default</span></li>
+                                <?php for ( $i = 0 ; $i < count($this->routing) ; $i++ ){ ?>
+                                    <li><span><?= $this->routing[$i] ?></span></li>
+                                <?php } ?>
                             </ol>
                                 
                             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -728,7 +733,7 @@
                     </header>
                         
                     <!-- start: page -->
-                        
+                    <?= $content(); ?>    
                     <!-- end: page -->
                 </section>
             </div>
@@ -800,8 +805,7 @@
                     </div>
                 </div>
             </aside>
-                
-                
         </section>
+        <input type ="text" id ="hidden-lang" value ="<?= $this->lang ?>"
     </body>
 </html>

@@ -1,11 +1,16 @@
 <?php
 class View {
-    public $model, $title, $body, $view, $lang;
+    public $model, $title, $body, $view, $lang, $session, $active, $section_title, $routing, $collapsed;
     
     function __construct($lang) {
         $this->model = new stdClass();
         $this->title = "";
         $this->lang = $lang;
+        $this->session = decbin($_SESSION["permisos"]);
+        $this->active = str_repeat("0", strlen($this->session));
+        $this->section_title = "";
+        $this->routing = [];
+        $this->collapsed = false;
     }
     function set_view($obj, $view = null, $model = null){
         $this->view = $view;
@@ -47,12 +52,10 @@ class View {
                         $action = Settings::MAIN_ACTION;
                         $id = $action;
                     }            
-                }              
-                
+                }  
                 if (!method_exists($controller_class, $action)){
                     return false;
-                }
-                
+                }                
                 $response = $controller_class->$action($id);
                 $this->set_model($controller, $response->model);
                 $include = $response->view == null ? "./views/$action.php": "./views/$response->view.php";  
@@ -65,8 +68,6 @@ class View {
                         include($this->layout);
                     }                    
                 } 
-                
-                
                 return $include;
             }
         }  
