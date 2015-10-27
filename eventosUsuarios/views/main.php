@@ -1,5 +1,6 @@
 <?php 
 $this->layout = "./layouts/main_layout.php";
+$this->section_title = Label::inicio;
 $this->active = substr_replace($this->active, "1", -1, 1);
 $content = function(){ ?>
 

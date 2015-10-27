@@ -4,15 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/resources/dictionaries/es/label.php</file>
-            <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/views/mailbox/redactar.php</file>
+            <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/models/mailbox/maillist.php</file>
             <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/assets/stylesheets/skins/default.css</file>
             <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/resources/constants/view.php</file>
+            <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/layouts/mailbox_layout.php</file>
             <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/layouts/main_layout.php</file>
             <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/assets/javascripts/theme.init.js</file>
             <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/views/mailbox/main.php</file>
-            <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/views/main.php</file>
             <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/index.php</file>
             <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/controllers/mailbox.php</file>
+            <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/views/mailbox/compose.php</file>
         </group>
     </open-files>
 </project-private>

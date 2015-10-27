@@ -9,7 +9,7 @@ class View {
         $this->session = decbin($_SESSION["permisos"]);
         $this->active = str_repeat("0", strlen($this->session));
         $this->section_title = "";
-        $this->routing = [];
+        $this->routing = null;
         $this->collapsed = false;
     }
     function set_view($obj, $view = null, $model = null){
