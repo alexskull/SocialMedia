@@ -1,87 +1,141 @@
 <?php
 class Label {
-    const a_quien_sigo = "¿A quién sigo?";
-    const adjuntar = "Adjuntar";
-    const asunto = "Asunto";
-    const buzon_mensajes = "Buzón de mensajes";
+    const actividades = "Actividades";
+    const ayuda = "Ayuda";
+    const apellidos = "Apellidos";
     
-    const cargar_fotos = "Cargar fotos";
-    const categorias_subcategorias = "Categorías y Subcategorías";
-    const cc = "CC";
-    const comenzado_en = "Comenzado en";
-    const compras = "Compras";    
-    const configuracion = "Configuración";
+    const basado_en_puntuaciones = "Basado en {0} puntuaciones";
+    const blog_ultimas_entradas = "<span>Últimas entradas</span> en nuestro blog";
+    
+    const cerrar_sesion = "Cerrar sesión"; 
+    const codigo_postal = "Código postal";
+    const comentarios = "Comentarios";
+    const comprobante = "Comprobante";
+    const confirma_participacion = "Confirma tu participación";
+    const confirmar_contraseña = "Confirmar contraseña";
+    const confirmar_correo = "Confirmar correo";
     const contraseña = "Contraseña";
     const correo = "Correo";
-    const crear_entrada = "Crear entrada";
-    const crear_nuevo = "Crear nuevo";
+    const crea_tu_cuenta = "Crea tu cuenta";
     
-    const datos_personales = "Datos personales";
-    const de = "De";
-    const descargar = "Descargar";
-    const descartar = "Descartar";
+    const deja_comentario = "Deja un comentario";
+    const descripcion = "Descripción";
+    const desde = "Desde";
+    const detalles = "Detalles";
+    const direccion = "Dirección";
+    const direccion_facturacion = "Dirección de Facturación";
     
-    const editar_perfil = "Editar perfil";
-    const eliminar = "Eliminar";
-    const entradas = "Entradas";
-    const enviados = "Enviados";
-    const enviar = "Enviar";
-    const estadisticas = "Estadísticas";
-    const eventos = "Eventos";
-    const eventos_esta_semana = "Eventos esta semana";
+    const enviar_correo_activacion = "Enviar correo de activación";
+    const error = "Error";    
+    const español = "Español";
+    const evento = "Evento";
+    const eventos = "Eventos";    
+    const eventos_pasados = "Eventos pasados";
     
-    const favoritos = "Favoritos";
-    const foto_perfil = "Foto de perfil";
-    const foto_portada = "Foto de portada";
+    const fecha = "Fecha";
+    const fecha_compra = "Fecha de compra";
+    const fecha_evento = "Fecha del evento";
+    const filtros = "Filtros";
+    const forma_pago = "Forma de pago";
     
-    const galeria_imagenes = "Galería de imágenes";
-    const galeria_inicio = "Galería de inicio";
-    const gestionar_blog = "Gestionar blog";
-    const gestionar_eventos = "Gestionar eventos";
-    const gestionar_usuarios = "Gestionar usuarios";
+    const gracias = "¡Gracias!";
+    const gratis = "Gratis";
     
+    const hasta = "Hasta";
+    const hora = "Hora";
+    
+    const idiomas = "Idiomas";
+    const informacion_adicional = "Información adicional";
+    const ingles = "Inglés";
+    const inicia_sesion = "Inicia sesión";
     const inicio = "Inicio";
-    const informacion_personal = "Información personal";
+    const iniciar_sesion_registrarse = "Inicia sesión / regístrate";
+    const inscripcion = "Inscripción";
     
-    const leido = "Leído";
-    const listado = "Listado";
-    const locaciones = "Locaciones";
+    const limpiar = "Limpiar";
+    const lugar = "Lugar";    
+    const lugar_encuentro = "Lugar de encuentro";    
+    const lugar_fecha = "Lugar y fecha del evento";
     
-    const mensajes = "Mensajes";
-    const mensajes_enviados = "Mensajes enviados";
-    const menu_principal = "Menú Principal";    
-    const mi_perfil = "Mi perfil";
-    const mis_eventos = "Mis eventos";
-    const mis_ultimos_eventos = "Mis últimos eventos";
-    const mostrar_menu = "Mostrar menú";
+    const mayor_relevancia = "Mayor relevancia";
+    const mas_participantes = "Más participantes";
+    const me_gusta = "Me gusta";
+    const menor_relevancia = "Menor relevancia";
+    const menos_participantes = "Menos participantes";
+    const metodos_pago = "Métodos de pago";
+    const modifica_busqueda = "Modifica tu búsqueda";
     
-    const nada = "Nada";
-    const no_leido = "No Leído";
-    const nombres = "Nombres";
+    const nombres = "Mombres";
     
-    const ocultar_menu = "Ocultar menú";
+    const o = "ó";
+    const opiniones = "Opiniones";
+    const orden = "Orden";
+    const ordenar_por_cantidad_inscritos = "Ordenar por nº de inscritos";
+    const ordenar_por_fecha = "Ordenar por fecha";
+    const ordenar_por_publicacion = "Ordenar por publicación";
+    const ordenar_por_relevancia = "Ordenar por relevancia";
+    const organizado_por = "<span>Organizado</span> por";
+    const otros_eventos_populares = "Otros eventos <span>populares</span>";
     
+    const pagar_tdc = "Pagar con tarjeta de crédito";
+    const pagar_paypal = "Pagar con Paypal";
+    const pagina_web = "Página Web";
     const pais = "País";
-    const para = "Para";
+    const palabras_clave = "Palabras clave";
+    const participante = "Participante";
+    const participar = "Participar";
+    const participantes_inscritos = "Participantes inscritos";
+    const pasados = "Pasados";
     const poblacion = "Población";
-    const promedio_visitas_diarias = "Promedio de visitas diarias";
+    const poblaciones = "Poblaciones";
+    const politicas_pago = "Políticas de pago";
+    const populares = "Populares";
+    const post_recientes = "Post recientes";
+    const pregunta_olvidaste_contraseña = "¿Olvidaste tu contraseña?";
     const provincia = "Provincia";
+    const provincias = "Provincias";
+    const proximos = "Próximos ";
     const proximos_eventos = "Próximos eventos";
+    const publicaciones_antiguas = "Publicaciones antiguas";
+    const publicaciones_recientes = "Publicaciones recientes";
+    const publicado_por = "Publicado por";
+    const publicar_comentario = "Publicar comentario";
+    const publicar_evento = "Publicar evento";
+    const puntuacion_participantes = "Puntuación de nuestros participantes";
+    const puntuacion_eventos_organizados = "Puntuación a los eventos organizados";
     
-    const recibidos = "Recibidos";
-    const redactar = "Redactar";
-    const repetir_contraseña = "Repetir contraseña";
+    const recuperar_contraseña = "Recuperar contraseña";
+    const registrate = "Regístrate";
+    const responder = "Responder";
+    const resumen = "Resumen";
+    const resumen_compra = "Resumen de la compra";
     
-    const seleccionar = "Seleccionar";
-    const seleccionar_todos = "Seleccionar todos";
-    const sin_leer = "Sin leer";
+    const seguidores = "Seguidores";
+    const selecciona_pais = "Selecciona tu país";
+    const selecciona_poblacion = "Selecciona tu población";
+    const selecciona_provincia = "Selecciona tu provincia";
+    const sigueme = "Sígueme";
+    const siguiente = "Siguiente";
     
-    const telefono = "Teléfono";
-    const todo = "Todo";
+    const tips = "Tips";
+    const todos = "Todos";
+    const total = "Total";
+    const tu_evento = "Tu evento";
+    const tus_datos = "Tus datos";    
     
+    const ultimos_eventos = "<span>Últimos</span> eventos";
     const usuario = "Usuario";
-    const ultimos_mensajes = "Últimos mensajes";
+    const usuario_correo = "Usuario ó correo";
     
-    const ver_todo = "Ver todo";
-    const visitas_perfil_hoy = "Visitas a mi perfil hoy";
+    const ver_categorias = "Ver categorías";
+    const ver_en_mapa = "Ver en el mapa";
+    const ver_comprobante = "Ver comprobante";
+    const ver_mas = "Ver más";
+    const ver_mensajes = "Ver mensajes";
+    const ver_perfil = "Ver perfil";
+    const ver_todos_eventos = "Ver todos los eventos";
+    const visita_nuestro_blog = "Visita nuestro blog";
+    const volver_evento = "Volver al evento";
+    
+    const ya_esta = "¡Ya está!";
 }
