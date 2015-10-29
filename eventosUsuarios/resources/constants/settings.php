@@ -1,9 +1,9 @@
 <?php
 class Settings {
-    const WEB_MAIN_HOST_URL = "http://localhost/Eventos/";  
-    const WEB_HOST_URL = "http://localhost/EventosUsuarios/";  
+    const WEB_MAIN_HOST_URL = "http://localhost/SocialMedia/Eventos/";  
+    const WEB_HOST_URL = "http://localhost/SocialMedia/EventosUsuarios/";  
     const WEB_SERVICES_URL = "";  
-    const HOST_URL = "localhost/EventosUsuarios"; 
+    const HOST_URL = "localhost/SocialMedia/EventosUsuarios"; 
     const URL_SLASHES = 5;
     const SERVER_TIMEZONE = "America/Caracas";
     const SESSION_TIMEOUT = 1800;
