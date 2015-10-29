@@ -6,12 +6,15 @@ class Label {
     const buzon_mensajes = "Buzón de mensajes";
     
     const cargar_fotos = "Cargar fotos";
+    const categorias_subcategorias = "Categorías y Subcategorías";
     const cc = "CC";
     const comenzado_en = "Comenzado en";
     const compras = "Compras";    
     const configuracion = "Configuración";
     const contraseña = "Contraseña";
     const correo = "Correo";
+    const crear_entrada = "Crear entrada";
+    const crear_nuevo = "Crear nuevo";
     
     const datos_personales = "Datos personales";
     const de = "De";
@@ -20,26 +23,35 @@ class Label {
     
     const editar_perfil = "Editar perfil";
     const eliminar = "Eliminar";
+    const entradas = "Entradas";
     const enviados = "Enviados";
     const enviar = "Enviar";
     const estadisticas = "Estadísticas";
     const eventos = "Eventos";
     const eventos_esta_semana = "Eventos esta semana";
     
+    const favoritos = "Favoritos";
     const foto_perfil = "Foto de perfil";
     const foto_portada = "Foto de portada";
     
     const galeria_imagenes = "Galería de imágenes";
+    const galeria_inicio = "Galería de inicio";
+    const gestionar_blog = "Gestionar blog";
+    const gestionar_eventos = "Gestionar eventos";
+    const gestionar_usuarios = "Gestionar usuarios";
     
     const inicio = "Inicio";
     const informacion_personal = "Información personal";
     
     const leido = "Leído";
+    const listado = "Listado";
+    const locaciones = "Locaciones";
     
     const mensajes = "Mensajes";
     const mensajes_enviados = "Mensajes enviados";
     const menu_principal = "Menú Principal";    
     const mi_perfil = "Mi perfil";
+    const mis_eventos = "Mis eventos";
     const mis_ultimos_eventos = "Mis últimos eventos";
     const mostrar_menu = "Mostrar menú";
     
@@ -67,6 +79,7 @@ class Label {
     const telefono = "Teléfono";
     const todo = "Todo";
     
+    const usuario = "Usuario";
     const ultimos_mensajes = "Últimos mensajes";
     
     const ver_todo = "Ver todo";

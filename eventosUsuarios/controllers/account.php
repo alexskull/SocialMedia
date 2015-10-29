@@ -2,9 +2,9 @@
 
 class Account {
     public function main(){
-        return View("settings/main");
+        return View("account/main");
     } 
     public function gallery(){
-        return View("settings/gallery");
+        return View("account/gallery");
     }
 }

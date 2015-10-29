@@ -31,7 +31,7 @@
             
         <!-- Theme Custom CSS -->
         <link rel="stylesheet" href="<?= Settings::WEB_HOST_URL ?>assets/stylesheets/theme-custom.css">
-            
+        <link href="<?= Settings::WEB_HOST_URL ?>content/stylesheets/general.css" rel="stylesheet" type="text/css"/>
         <!-- Head Libs -->
         <script src="<?= Settings::WEB_HOST_URL ?>assets/vendor/modernizr/modernizr.js"></script>
             
@@ -207,13 +207,15 @@
                                     </li>
                                     <?php } 
                                     if (substr(strlen($this->session) >= 3 && $this->session, -3, 1) == "1" ||
-                                        substr(strlen($this->session) >= 3 && $this->session, -4, 1) == "1" ){  ?>  
+                                        substr(strlen($this->session) >= 4 && $this->session, -4, 1) == "1" ||
+                                        substr(strlen($this->session) >= 5 && $this->session, -5, 1) == "1" ){  ?>  
                                     <li class="nav-parent 
                                         <?= substr($this->active, -3, 1) == "1" ||  
-                                            substr($this->active, -4, 1) == "1" ? "nav-active nav-expanded" : "" ?>">
+                                            substr($this->active, -4, 1) == "1" ||  
+                                            substr($this->active, -5, 1) == "1"? "nav-active nav-expanded" : "" ?>">
                                         <a>
-                                            <i class="fa fa-gear" aria-hidden="true"></i>
-                                            <span><?= Label::configuracion ?></span>
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                            <span><?= Label::usuario ?></span>
                                         </a>
                                         <ul class="nav nav-children">
                                             <?php if (substr(strlen($this->session) >= 3 && $this->session, -3, 1) == "1"){  ?>  
@@ -227,6 +229,137 @@
                                             <li class = "<?= substr($this->active, -4, 1) == "1" ? "nav-active" : "" ?>">
                                                 <a href="<?= Settings::WEB_HOST_URL ?>account/gallery">
                                                     <?= Label::galeria_imagenes ?>
+                                                </a>
+                                            </li>
+                                            <?php } 
+                                            if (substr(strlen($this->session) >= 5 && $this->session, -5, 1) == "1"){  ?>  
+                                            <li class = "<?= substr($this->active, -5, 1) == "1" ? "nav-active" : "" ?>">
+                                                <a href="<?= Settings::WEB_HOST_URL ?>account/favs">
+                                                    <?= Label::favoritos ?>
+                                                </a>
+                                            </li>
+                                            <?php } ?>
+                                        </ul>
+                                    </li>
+                                    <?php } 
+                                    if (substr(strlen($this->session) >= 6 && $this->session, -6, 1) == "1" ||
+                                        substr(strlen($this->session) >= 7 && $this->session, -7, 1) == "1" ){  ?>  
+                                    <li class="nav-parent 
+                                        <?= substr($this->active, -6, 1) == "1" ||  
+                                            substr($this->active, -7, 1) == "1"  ? "nav-active nav-expanded" : "" ?>">
+                                        <a>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <span><?= Label::eventos ?></span>
+                                        </a>
+                                        <ul class="nav nav-children">
+                                            <?php if (substr(strlen($this->session) >= 6 && $this->session, -6, 1) == "1"){  ?>  
+                                            <li class = "<?= substr($this->active, -6, 1) == "1" ? "nav-active" : "" ?>">
+                                                <a href="<?= Settings::WEB_HOST_URL ?>events/">
+                                                    <?= Label::mis_eventos ?>
+                                                </a>
+                                            </li>
+                                            <?php } 
+                                            if (substr(strlen($this->session) >= 7 && $this->session, -7, 1) == "1"){  ?>  
+                                            <li class = "<?= substr($this->active, -7, 1) == "1" ? "nav-active" : "" ?>">
+                                                <a href="<?= Settings::WEB_HOST_URL ?>events/favs">
+                                                    <?= Label::favoritos ?>
+                                                </a>
+                                            </li>
+                                            <?php } ?>
+                                        </ul>
+                                    </li>
+                                    <?php } 
+                                    if (strlen($this->session) >= 8 && substr($this->session, -8, 1) == "1"){ ?>
+                                    <li class = "<?= substr($this->active, -8, 1) == "1" ? "nav-active" : "" ?>">
+                                        <a href="<?= Settings::WEB_HOST_URL ?>/homegallery">
+                                            <i class="fa fa-image" aria-hidden="true"></i>
+                                            <span><?= Label::galeria_inicio ?></span>
+                                        </a>
+                                    </li>
+                                    <?php } 
+                                    if (substr(strlen($this->session) >= 6 && $this->session, -9, 1) == "1" ||
+                                        substr(strlen($this->session) >= 7 && $this->session, -10, 1) == "1" ){  ?>  
+                                    <li class="nav-parent 
+                                        <?= substr($this->active, -6, 1) == "1" ||  
+                                            substr($this->active, -7, 1) == "1"  ? "nav-active nav-expanded" : "" ?>">
+                                        <a>
+                                            <i class="fa fa-gears" aria-hidden="true"></i>
+                                            <span><?= Label::configuracion ?></span>
+                                        </a>
+                                        <ul class="nav nav-children">
+                                            <?php if (substr(strlen($this->session) >= 9 && $this->session, -9, 1) == "1"){  ?>  
+                                            <li class = "<?= substr($this->active, -9, 1) == "1" ? "nav-active" : "" ?>">
+                                                <a href="<?= Settings::WEB_HOST_URL ?>basic/category">
+                                                    <?= Label::categorias_subcategorias ?>
+                                                </a>
+                                            </li>
+                                            <?php } 
+                                            if (substr(strlen($this->session) >= 10 && $this->session, -10, 1) == "1"){  ?>  
+                                            <li class = "<?= substr($this->active, -10, 1) == "1" ? "nav-active" : "" ?>">
+                                                <a href="<?= Settings::WEB_HOST_URL ?>basic/location">
+                                                    <?= Label::locaciones ?>
+                                                </a>
+                                            </li>
+                                            <?php } ?>
+                                        </ul>
+                                    </li>
+                                    <?php } 
+                                    if (strlen($this->session) >= 9 && substr($this->session, -11, 1) == "1"){ ?>
+                                    <li class = "<?= substr($this->active, -11, 1) == "1" ? "nav-active" : "" ?>">
+                                        <a href="<?= Settings::WEB_HOST_URL ?>manage_users">
+                                            <i class="fa fa-users" aria-hidden="true"></i>
+                                            <span><?= Label::gestionar_usuarios ?></span>
+                                        </a>
+                                    </li>
+                                    <?php }  
+                                    if (substr(strlen($this->session) >= 12 && $this->session, -12, 1) == "1" ||
+                                        substr(strlen($this->session) >= 7 && $this->session, -13, 1) == "1" ){  ?>  
+                                    <li class="nav-parent 
+                                        <?= substr($this->active, -12, 1) == "1" ||  
+                                            substr($this->active, -13, 1) == "1"  ? "nav-active nav-expanded" : "" ?>">
+                                        <a>
+                                            <i class="fa fa-coffee" aria-hidden="true"></i>
+                                            <span><?= Label::gestionar_eventos ?></span>
+                                        </a>
+                                        <ul class="nav nav-children">
+                                            <?php if (substr(strlen($this->session) >= 12 && $this->session, -12, 1) == "1"){  ?>  
+                                            <li class = "<?= substr($this->active, -12, 1) == "1" ? "nav-active" : "" ?>">
+                                                <a href="<?= Settings::WEB_HOST_URL ?>manage_events/">
+                                                    <?= Label::listado ?>
+                                                </a>
+                                            </li>
+                                            <?php } 
+                                            if (substr(strlen($this->session) >= 13 && $this->session, -13, 1) == "1"){  ?>  
+                                            <li class = "<?= substr($this->active, -13, 1) == "1" ? "nav-active" : "" ?>">
+                                                <a href="<?= Settings::WEB_HOST_URL ?>manage_events/new">
+                                                    <?= Label::crear_nuevo ?>
+                                                </a>
+                                            </li>
+                                            <?php } ?>
+                                        </ul>
+                                    </li>
+                                    <?php } 
+                                    if (substr(strlen($this->session) >= 14 && $this->session, -14, 1) == "1" ||
+                                        substr(strlen($this->session) >= 15 && $this->session, -15, 1) == "1" ){  ?>  
+                                    <li class="nav-parent 
+                                        <?= substr($this->active, -14, 1) == "1" ||  
+                                            substr($this->active, -15, 1) == "1"  ? "nav-active nav-expanded" : "" ?>">
+                                        <a>
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            <span><?= Label::gestionar_blog ?></span>
+                                        </a>
+                                        <ul class="nav nav-children">
+                                            <?php if (substr(strlen($this->session) >= 14 && $this->session, -14, 1) == "1"){  ?>  
+                                            <li class = "<?= substr($this->active, -14, 1) == "1" ? "nav-active" : "" ?>">
+                                                <a href="<?= Settings::WEB_HOST_URL ?>blog/">
+                                                    <?= Label::entradas ?>
+                                                </a>
+                                            </li>
+                                            <?php } 
+                                            if (substr(strlen($this->session) >= 15 && $this->session, -15, 1) == "1"){  ?>  
+                                            <li class = "<?= substr($this->active, -15, 1) == "1" ? "nav-active" : "" ?>">
+                                                <a href="<?= Settings::WEB_HOST_URL ?>blog/new">
+                                                    <?= Label::crear_entrada ?>
                                                 </a>
                                             </li>
                                             <?php } ?>
@@ -258,7 +391,7 @@
                                 <?php } ?>
                             </ol>
                                 
-                            <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+                            <a class="sidebar-right-toggle" data-open="sidebar-right"></a>
                         </div>
                     </header>
                         
@@ -267,74 +400,6 @@
                     <!-- end: page -->
                 </section>
             </div>
-                
-            <aside id="sidebar-right" class="sidebar-right">
-                <div class="nano">
-                    <div class="nano-content">
-                        <a href="#" class="mobile-close visible-xs">
-                            Collapse <i class="fa fa-chevron-right"></i>
-                        </a>
-                            
-                            <div class="sidebar-right-wrapper">
-                                
-                            <div class="sidebar-widget widget-calendar">
-                                <h6>Upcoming Tasks</h6>
-                                <div data-plugin-datepicker data-plugin-skin="dark" ></div>
-                                    
-                                <ul>
-                                    <li>
-                                        <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
-                                        <span>Company Meeting</span>
-                                    </li>
-                                </ul>
-                            </div>
-                                
-                            <div class="sidebar-widget widget-friends">
-                                <h6>Friends</h6>
-                                <ul>
-                                    <li class="status-online">
-                                        <figure class="profile-picture">
-                                            <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
-                                        </figure>
-                                        <div class="profile-info">
-                                            <span class="name">Joseph Doe Junior</span>
-                                            <span class="title">Hey, how are you?</span>
-                                        </div>
-                                    </li>
-                                    <li class="status-online">
-                                        <figure class="profile-picture">
-                                            <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
-                                        </figure>
-                                        <div class="profile-info">
-                                            <span class="name">Joseph Doe Junior</span>
-                                            <span class="title">Hey, how are you?</span>
-                                        </div>
-                                    </li>
-                                    <li class="status-offline">
-                                        <figure class="profile-picture">
-                                            <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
-                                        </figure>
-                                        <div class="profile-info">
-                                            <span class="name">Joseph Doe Junior</span>
-                                            <span class="title">Hey, how are you?</span>
-                                        </div>
-                                    </li>
-                                    <li class="status-offline">
-                                        <figure class="profile-picture">
-                                            <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
-                                        </figure>
-                                        <div class="profile-info">
-                                            <span class="name">Joseph Doe Junior</span>
-                                            <span class="title">Hey, how are you?</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                                
-                        </div>
-                    </div>
-                </div>
-            </aside>
         </section>
         <input type ="text" id ="hidden-lang" value ="<?= $this->lang ?>"
     </body>
