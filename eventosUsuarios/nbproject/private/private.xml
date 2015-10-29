@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/resources/dictionaries/es/label.php</file>
-            <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/resources/dictionaries/en/message.php</file>
-            <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/resources/dictionaries/es/message.php</file>
-            <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/resources/constants/view.php</file>
-            <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/layouts/main_layout.php</file>
-            <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/views/settings/main.php</file>
-            <file>file:/D:/Programas/xampp/htdocs/eventosUsuarios/views/settings/gallery.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
