@@ -2,10 +2,8 @@
 $this->layout = "./layouts/main_layout.php";
 $lang = $this->lang;
 $content = function()  use ($lang){ ?>
-<style>    
-    @import url("<?= Settings::WEB_HOST_URL ?>content/stylesheets/date_time_picker.css"); 
-    @import url("<?= Settings::WEB_HOST_URL ?>content/skins/square/blue.css"); 
-</style>
+<link href="<?= Settings::WEB_HOST_URL ?>content/skins/square/blue.css" rel="stylesheet" type="text/css"/>
+<link href="<?= Settings::WEB_HOST_URL ?>content/stylesheets/date_time_picker.css" rel="stylesheet" type="text/css"/>
 <script src="<?= Settings::WEB_HOST_URL ?>content/scripts/icheck.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?libraries=places&region=es&language=<?= $lang ?>&sensor=false"></script>
 <script src="<?= Settings::WEB_HOST_URL ?>content/scripts/infobox.js"></script>

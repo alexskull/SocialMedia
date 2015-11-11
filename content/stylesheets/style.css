@@ -2054,17 +2054,17 @@ ul.list_icons li i{
 
 /* Error validate style */   
 label.error{
-    font-size:11px;
-    position: absolute;
-    top:-15px;
-    right:-30px;
-    z-index:99;
-    height:25px;
-    line-height:25px;
-    background-color:#e34f4f;
-    color:#fff;
-    font-weight:normal;
-    padding:0 6px;
+        font-size: 11px;
+    /*right: -175px;*/
+    z-index: 99;
+    height: 25px;
+    line-height: 25px;
+    background-color: #e34f4f;
+    color: #fff;
+    font-weight: normal;
+    padding: 0 6px;
+    top: -70px;
+    position: relative;
 } 
 label.error:after {
     content: '';

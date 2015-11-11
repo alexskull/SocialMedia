@@ -72,7 +72,7 @@ $content = function() { ?>
     <div class="row">
         <div class="col-md-8" id="single_tour_desc">
             
-            <p class="visible-sm visible-xs"><a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">View on map</a></p><!-- Map button for tablets/mobiles -->
+            <p class="visible-sm visible-xs"><a class="btn_map"><i class="icon-user-add"></i><?= Label::sigueme ?></a></p><!-- Map button for tablets/mobiles -->
             <div id="Img_carousel" class="slider-pro">
                     <div class="sp-slides">
                     
@@ -298,6 +298,25 @@ $content = function() { ?>
             <p class="hidden-sm hidden-xs">
                 <a class="btn_map"><i class="icon-user-add"></i><?= Label::sigueme ?></a>
             </p>
+            <div class="box_style_4">
+                <div class ="row">
+                    <div class="col-md-4">
+                        <i class=" icon_set_1_icon-61"></i>
+                        <a class="phone">40</a>
+                        <small><?= Label::actividades ?></small>
+                    </div>
+                    <div class="col-md-4">
+                        <i class=" icon_set_1_icon-85"></i>
+                        <a class="phone">105</a>
+                        <small><?= Label::opiniones ?></small>
+                    </div>
+                    <div class="col-md-4">
+                        <i class=" icon_set_1_icon-70"></i>
+                        <a class="phone">7</a>
+                        <small><?= Label::seguidores ?></small>
+                    </div>
+                </div> 
+            </div>
             <div class="box_style_2">
                 <h4><?= Label::proximos_eventos ?></h4>
                 <table class="table table-striped">                    

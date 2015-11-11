@@ -18,15 +18,15 @@
         <link href='http://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
         <link href="<?= Settings::WEB_HOST_URL ?>content/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-        <link href="<?= Settings::WEB_HOST_URL ?>content/stylesheets/layouts/main_layout.css" rel="stylesheet" type="text/css"/>
+        <link href="<?= Settings::WEB_HOST_URL ?>content/stylesheets/layouts/main_layout.css" rel="stylesheet" type="text/css"/>        
+        <link href="<?= Settings::WEB_HOST_URL ?>content/stylesheets/magnific-popup.css" rel="stylesheet" type="text/css"/>
+        
         <!-- Common scripts -->
         <script src="<?= Settings::WEB_HOST_URL ?>content/scripts/jquery-1.11.2.min.js"></script>
+        <script src="<?= Settings::WEB_HOST_URL ?>content/scripts/jquery.magnific-popup.js"></script>
         <script src="<?= Settings::WEB_HOST_URL ?>content/scripts/common_scripts_min.js"></script>
         <script src="<?= Settings::WEB_HOST_URL ?>content/scripts/functions.js"></script>
-        
-
     </head>
-
     <body>
         <div id="preloader">
             <div class="sk-spinner sk-spinner-wave">
@@ -228,10 +228,7 @@
                 </div>
             </div><!-- container -->
         </header><!-- End Header -->
-        <?= 
-        $content(); 
-        ?>
-        
+        <?= $content(); ?>        
         <footer>
             <div class="container">
                 <div class="row">

@@ -7,6 +7,10 @@ require('./resources/dictionaries/lang.php');
 
 Session::CHECK_SESSION_TIMEOUT();
 
+
+$_SESSION["permisos"] = 32767;
+$_SESSION["usuarios_id"] = 2;
+
 $uri        = explode('/', $_SERVER['REQUEST_URI']);
 $view       = new View($lang);
 $response   = $view->load_elements($uri);

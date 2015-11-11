@@ -1,17 +1,24 @@
 <?php
 class View {
-    public $model, $title, $body, $view, $lang, $header;
+    public $model, $title, $body, $view, $lang, $session, $active, $section_title, $routing, $collapsed, $header, $controller;
     
     function __construct($lang) {
         $this->model = new stdClass();
-        $this->header = false;
         $this->title = "";
         $this->lang = $lang;
+        $this->session = decbin($_SESSION["permisos"]);
+        $this->active = str_repeat("0", strlen($this->session));
+        $this->section_title = "";
+        $this->routing = null;
+        $this->collapsed = false;
+        $this->header = "";
+        $this->controller = "";
     }
     function set_view($obj, $view = null, $model = null){
         $this->view = $view;
         if (isset($model)){
             $this->model->$obj = $model;
+            $this->controller = $obj;
         }
         $this->body = new stdClass();
     }
@@ -35,6 +42,12 @@ class View {
                 $controller = ucfirst($controller);
                 $controller_class = new $controller();
                 $action = isset($uri[Settings::URL_SLASHES-2]) ? $uri[Settings::URL_SLASHES-2] : false;
+                
+                $explode = explode('?', $action);
+                $action = $explode[0];
+                
+                
+                
                 $id = null;
                  
                 if ($action == false ){
@@ -43,32 +56,42 @@ class View {
                 else {                   
                     if (method_exists($controller_class, $action)){
                         $id = isset($uri[Settings::URL_SLASHES-1]) ? $uri[Settings::URL_SLASHES-1] : false;
+                        
+                        if ($id != false) {
+                            $explode = explode("?", $id);
+                            if (isset($explode)){
+                                $query =  parse_str ($id[1]);
+                                $id = isset($explode[0])? array_merge(array("action" => $id[0]), $query): $query;
+                                
+                            }
+                        }
                     }
                     else {
                         $action = Settings::MAIN_ACTION;
                         $id = $action;
                     }            
-                }              
-                
+                }  
                 if (!method_exists($controller_class, $action)){
                     return false;
-                }
-                
+                }                
                 $response = $controller_class->$action($id);
-                $this->set_model($controller, $response->model);
-                $include = $response->view == null ? "./views/$action.php": "./views/$response->view.php";  
-                
-                include($include);
-                $layout = null;
-                while(isset($this->layout) && $this->layout != $layout) {
-                    $layout = $this->layout;
-                    if(isset($this->layout)){
-                        include($this->layout);
-                    }                    
-                } 
-                
-                
-                return $include;
+                if (is_a($response, "View")){
+                    $this->set_model($controller, $response->model);
+                    $include = $response->view == null ? "./views/$action.php": "./views/$response->view.php";  
+
+                    include($include);
+                    $layout = null;
+                    while(isset($this->layout) && $this->layout != $layout) {
+                        $layout = $this->layout;
+                        if(isset($this->layout)){
+                            include($this->layout);
+                        }                    
+                    } 
+                    return true;
+                }
+                else {
+                    return true;
+                }
             }
         }  
     }

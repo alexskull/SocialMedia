@@ -17,6 +17,7 @@ class Label {
     const español = "Español";
     const eventos = "Eventos";
     
+    const f = "F";
     const fecha = "Fecha";
     const fecha_evento = "Fecha del evento";
     const filtros = "Filtros";
@@ -34,6 +35,7 @@ class Label {
     
     const lugar = "Lugar";
     
+    const m = "M";
     const mayor_relevancia = "Mayor relevancia";
     const mas_participantes = "Más participantes";
     const menor_relevancia = "Menor relevancia";
@@ -59,6 +61,8 @@ class Label {
     
     const recuperar_contraseña = "Recuperar contraseña";
     const registrate = "Regístrate";
+    
+    const sexo = "Sexo";
     
     const todos = "Todos";
     

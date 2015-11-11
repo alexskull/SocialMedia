@@ -1,5 +1,8 @@
 <?php
 class Users {    
+    public function activating(){
+        return View("users/activating");
+    }
     public function signin(){
         return View("users/signin");
     }

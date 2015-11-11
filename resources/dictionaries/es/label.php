@@ -1,5 +1,6 @@
 <?php
 class Label {
+    const actividades = "Actividades";
     const ayuda = "Ayuda";
     const apellidos = "Apellidos";
     
@@ -31,14 +32,17 @@ class Label {
     const eventos = "Eventos";    
     const eventos_pasados = "Eventos pasados";
     
+    const f = "F";
     const fecha = "Fecha";
     const fecha_compra = "Fecha de compra";
     const fecha_evento = "Fecha del evento";
+    const fecha_nacimiento = "Fecha de nacimiento";
     const filtros = "Filtros";
     const forma_pago = "Forma de pago";
     
     const gracias = "¡Gracias!";
     const gratis = "Gratis";
+    const guardar = "Guardar";
     
     const hasta = "Hasta";
     const hora = "Hora";
@@ -56,6 +60,7 @@ class Label {
     const lugar_encuentro = "Lugar de encuentro";    
     const lugar_fecha = "Lugar y fecha del evento";
     
+    const m = "M";
     const mayor_relevancia = "Mayor relevancia";
     const mas_participantes = "Más participantes";
     const me_gusta = "Me gusta";
@@ -67,6 +72,7 @@ class Label {
     const nombres = "Mombres";
     
     const o = "ó";
+    const opiniones = "Opiniones";
     const orden = "Orden";
     const ordenar_por_cantidad_inscritos = "Ordenar por nº de inscritos";
     const ordenar_por_fecha = "Ordenar por fecha";
@@ -108,10 +114,12 @@ class Label {
     const resumen = "Resumen";
     const resumen_compra = "Resumen de la compra";
     
-    const sigueme = "Sígueme";
+    const seguidores = "Seguidores";
     const selecciona_pais = "Selecciona tu país";
     const selecciona_poblacion = "Selecciona tu población";
     const selecciona_provincia = "Selecciona tu provincia";
+    const sexo = "Sexo";
+    const sigueme = "Sígueme";
     const siguiente = "Siguiente";
     
     const tips = "Tips";
