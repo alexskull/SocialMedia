@@ -10,5 +10,7 @@ return array(
                 'password' => 'cXtc_970',
             ),
         ),
+        'username' => 'evttest',
+        'password' => 'cXtc_970',
     ),
 );

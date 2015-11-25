@@ -189,7 +189,6 @@ class Adapter implements AdapterInterface, Profiler\ProfilerAwareInterface
         } else {
             $result = $this->driver->getConnection()->execute($sql);
         }
-
         if ($result instanceof Driver\ResultInterface && $result->isQueryResult()) {
             $resultSet = clone ($resultPrototype ?: $this->queryResultSetPrototype);
             $resultSet->initialize($result);

@@ -19,7 +19,6 @@ class VistaEstadoCiudadMapper
         $returnArray = array();
 
         foreach ($resultset as $result) {
-            echo json_encode($result);
             $returnArray[] = $result;
         }
         $adapter = new ArrayAdapter(($returnArray));

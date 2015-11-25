@@ -119,15 +119,6 @@ return array(
                     ),
                 ),
             ),
-            'evt.rest.usuarios-sub-categorias' => array(
-                'type' => 'Segment',
-                'options' => array(
-                    'route' => '/usuarios_sub_categorias[/:usuarios_sub_categorias_id]',
-                    'defaults' => array(
-                        'controller' => 'evt\\V1\\Rest\\UsuariosSubCategorias\\Controller',
-                    ),
-                ),
-            ),
             'evt.rest.usuarios-muro-comentarios-moderar' => array(
                 'type' => 'Segment',
                 'options' => array(
@@ -284,7 +275,7 @@ return array(
             'evt.rest.eventos-sub-categorias' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/evtsubcat[/:eventos_sub_categorias_id]',
+                    'route' => '/eventos_sub_categorias[/:eventos_sub_categorias_id]',
                     'defaults' => array(
                         'controller' => 'evt\\V1\\Rest\\EventosSubCategorias\\Controller',
                     ),
@@ -371,6 +362,51 @@ return array(
                     ),
                 ),
             ),
+            'evt.rest.vista-subcategoria' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/vista-subcategoria[/:vista_subcategoria_id]',
+                    'defaults' => array(
+                        'controller' => 'evt\\V1\\Rest\\VistaSubcategoria\\Controller',
+                    ),
+                ),
+            ),
+            'evt.rest.vista-usuario-obtener-basico' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/vista-usuario-obtener-basico[/:vista_usuario_obtener_basico_id]',
+                    'defaults' => array(
+                        'controller' => 'evt\\V1\\Rest\\VistaUsuarioObtenerBasico\\Controller',
+                    ),
+                ),
+            ),
+            'evt.rest.vista-usuarios-x-tipo' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/vista-usuarios-x-tipo[/:vista_usuarios_x_tipo_id]',
+                    'defaults' => array(
+                        'controller' => 'evt\\V1\\Rest\\VistaUsuariosXTipo\\Controller',
+                    ),
+                ),
+            ),
+            'evt.rest.vista-usuario-subcategorias' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/vista-usuario-subcategorias[/:usuarios_id]',
+                    'defaults' => array(
+                        'controller' => 'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\Controller',
+                    ),
+                ),
+            ),
+            'evt.rest.vista-evento' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/vista-evento[/:vista_evento_id]',
+                    'defaults' => array(
+                        'controller' => 'evt\\V1\\Rest\\VistaEvento\\Controller',
+                    ),
+                ),
+            ),
         ),
     ),
     'zf-versioning' => array(
@@ -388,7 +424,6 @@ return array(
             10 => 'evt.rest.usuarios-roles',
             11 => 'evt.rest.usuarios-moderar',
             12 => 'evt.rest.usuarios-seguidores',
-            13 => 'evt.rest.usuarios-sub-categorias',
             14 => 'evt.rest.usuarios-muro-comentarios-moderar',
             15 => 'evt.rest.blog-post',
             16 => 'evt.rest.blog-post-galeria-moderar',
@@ -416,6 +451,11 @@ return array(
             38 => 'evt.rest.eventos-geo-ubicaciones',
             39 => 'evt.rest.vista-pais-estado',
             40 => 'evt.rest.vista-estado-ciudad',
+            41 => 'evt.rest.vista-subcategoria',
+            42 => 'evt.rest.vista-usuario-obtener-basico',
+            43 => 'evt.rest.vista-usuarios-x-tipo',
+            44 => 'evt.rest.vista-usuario-subcategorias',
+            45 => 'evt.rest.vista-evento',
         ),
     ),
     'zf-rest' => array(
@@ -705,28 +745,6 @@ return array(
             'collection_class' => 'evt\\V1\\Rest\\UsuariosSeguidores\\UsuariosSeguidoresCollection',
             'service_name' => 'usuarios_seguidores',
         ),
-        'evt\\V1\\Rest\\UsuariosSubCategorias\\Controller' => array(
-            'listener' => 'evt\\V1\\Rest\\UsuariosSubCategorias\\UsuariosSubCategoriasResource',
-            'route_name' => 'evt.rest.usuarios-sub-categorias',
-            'route_identifier_name' => 'usuarios_sub_categorias_id',
-            'collection_name' => 'usuarios_sub_categorias',
-            'entity_http_methods' => array(
-                0 => 'GET',
-                1 => 'PATCH',
-                2 => 'PUT',
-                3 => 'DELETE',
-            ),
-            'collection_http_methods' => array(
-                0 => 'GET',
-                1 => 'POST',
-            ),
-            'collection_query_whitelist' => array(),
-            'page_size' => 25,
-            'page_size_param' => null,
-            'entity_class' => 'evt\\V1\\Rest\\UsuariosSubCategorias\\UsuariosSubCategoriasEntity',
-            'collection_class' => 'evt\\V1\\Rest\\UsuariosSubCategorias\\UsuariosSubCategoriasCollection',
-            'service_name' => 'usuarios_sub_categorias',
-        ),
         'evt\\V1\\Rest\\UsuariosMuroComentariosModerar\\Controller' => array(
             'listener' => 'evt\\V1\\Rest\\UsuariosMuroComentariosModerar\\UsuariosMuroComentariosModerarResource',
             'route_name' => 'evt.rest.usuarios-muro-comentarios-moderar',
@@ -976,13 +994,9 @@ return array(
             'collection_name' => 'eventos_categorias',
             'entity_http_methods' => array(
                 0 => 'GET',
-                1 => 'PATCH',
-                2 => 'PUT',
-                3 => 'DELETE',
             ),
             'collection_http_methods' => array(
                 0 => 'GET',
-                1 => 'POST',
             ),
             'collection_query_whitelist' => array(),
             'page_size' => 25,
@@ -1313,6 +1327,97 @@ return array(
             'collection_class' => 'evt\\V1\\Rest\\VistaEstadoCiudad\\VistaEstadoCiudadCollection',
             'service_name' => 'VistaEstadoCiudad',
         ),
+        'evt\\V1\\Rest\\VistaSubcategoria\\Controller' => array(
+            'listener' => 'evt\\V1\\Rest\\VistaSubcategoria\\VistaSubcategoriaResource',
+            'route_name' => 'evt.rest.vista-subcategoria',
+            'route_identifier_name' => 'vista_subcategoria_id',
+            'collection_name' => 'eventos_sub_categorias',
+            'entity_http_methods' => array(
+                0 => 'GET',
+            ),
+            'collection_http_methods' => array(
+                0 => 'GET',
+                1 => 'POST',
+            ),
+            'collection_query_whitelist' => array(
+                0 => 'id_categoria',
+            ),
+            'page_size' => 25,
+            'page_size_param' => null,
+            'entity_class' => 'evt\\V1\\Rest\\VistaSubcategoria\\VistaSubcategoriaEntity',
+            'collection_class' => 'evt\\V1\\Rest\\VistaSubcategoria\\VistaSubcategoriaCollection',
+            'service_name' => 'VistaSubcategoria',
+        ),
+        'evt\\V1\\Rest\\VistaUsuarioObtenerBasico\\Controller' => array(
+            'listener' => 'evt\\V1\\Rest\\VistaUsuarioObtenerBasico\\VistaUsuarioObtenerBasicoResource',
+            'route_name' => 'evt.rest.vista-usuario-obtener-basico',
+            'route_identifier_name' => 'vista_usuario_obtener_basico_id',
+            'collection_name' => 'usuarios',
+            'entity_http_methods' => array(
+                0 => 'GET',
+            ),
+            'collection_http_methods' => array(),
+            'collection_query_whitelist' => array(),
+            'page_size' => 25,
+            'page_size_param' => null,
+            'entity_class' => 'evt\\V1\\Rest\\VistaUsuarioObtenerBasico\\VistaUsuarioObtenerBasicoEntity',
+            'collection_class' => 'evt\\V1\\Rest\\VistaUsuarioObtenerBasico\\VistaUsuarioObtenerBasicoCollection',
+            'service_name' => 'VistaUsuarioObtenerBasico',
+        ),
+        'evt\\V1\\Rest\\VistaUsuariosXTipo\\Controller' => array(
+            'listener' => 'evt\\V1\\Rest\\VistaUsuariosXTipo\\VistaUsuariosXTipoResource',
+            'route_name' => 'evt.rest.vista-usuarios-x-tipo',
+            'route_identifier_name' => 'vista_usuarios_x_tipo_id',
+            'collection_name' => 'usuarios',
+            'entity_http_methods' => array(),
+            'collection_http_methods' => array(
+                0 => 'GET',
+            ),
+            'collection_query_whitelist' => array(
+                0 => 'rol',
+            ),
+            'page_size' => 25,
+            'page_size_param' => null,
+            'entity_class' => 'evt\\V1\\Rest\\VistaUsuariosXTipo\\VistaUsuariosXTipoEntity',
+            'collection_class' => 'evt\\V1\\Rest\\VistaUsuariosXTipo\\VistaUsuariosXTipoCollection',
+            'service_name' => 'VistaUsuariosXTipo',
+        ),
+        'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\Controller' => array(
+            'listener' => 'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\VistaUsuarioSubcategoriasResource',
+            'route_name' => 'evt.rest.vista-usuario-subcategorias',
+            'route_identifier_name' => 'usuarios_id',
+            'collection_name' => 'usuario_subcategorias',
+            'entity_http_methods' => array(
+                0 => 'GET',
+                1 => 'DELETE',
+                2 => 'POST',
+            ),
+            'collection_http_methods' => array(),
+            'collection_query_whitelist' => array(
+                0 => 'usuarios_id',
+            ),
+            'page_size' => 25,
+            'page_size_param' => null,
+            'entity_class' => 'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\VistaUsuarioSubcategoriasEntity',
+            'collection_class' => 'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\VistaUsuarioSubcategoriasCollection',
+            'service_name' => 'VistaUsuarioSubcategorias',
+        ),
+        'evt\\V1\\Rest\\VistaEvento\\Controller' => array(
+            'listener' => 'evt\\V1\\Rest\\VistaEvento\\VistaEventoResource',
+            'route_name' => 'evt.rest.vista-evento',
+            'route_identifier_name' => 'vista_evento_id',
+            'collection_name' => 'evento',
+            'entity_http_methods' => array(
+                0 => 'GET',
+            ),
+            'collection_http_methods' => array(),
+            'collection_query_whitelist' => array(),
+            'page_size' => 25,
+            'page_size_param' => null,
+            'entity_class' => 'evt\\V1\\Rest\\VistaEvento\\VistaEventoEntity',
+            'collection_class' => 'evt\\V1\\Rest\\VistaEvento\\VistaEventoCollection',
+            'service_name' => 'VistaEvento',
+        ),
     ),
     'zf-content-negotiation' => array(
         'controllers' => array(
@@ -1329,7 +1434,6 @@ return array(
             'evt\\V1\\Rest\\UsuariosRoles\\Controller' => 'HalJson',
             'evt\\V1\\Rest\\UsuariosModerar\\Controller' => 'HalJson',
             'evt\\V1\\Rest\\UsuariosSeguidores\\Controller' => 'HalJson',
-            'evt\\V1\\Rest\\UsuariosSubCategorias\\Controller' => 'HalJson',
             'evt\\V1\\Rest\\UsuariosMuroComentariosModerar\\Controller' => 'HalJson',
             'evt\\V1\\Rest\\BlogPost\\Controller' => 'HalJson',
             'evt\\V1\\Rest\\BlogPostGaleriaModerar\\Controller' => 'HalJson',
@@ -1357,6 +1461,11 @@ return array(
             'evt\\V1\\Rest\\EventosGeoUbicaciones\\Controller' => 'HalJson',
             'evt\\V1\\Rest\\VistaPaisEstado\\Controller' => 'HalJson',
             'evt\\V1\\Rest\\VistaEstadoCiudad\\Controller' => 'HalJson',
+            'evt\\V1\\Rest\\VistaSubcategoria\\Controller' => 'HalJson',
+            'evt\\V1\\Rest\\VistaUsuarioObtenerBasico\\Controller' => 'HalJson',
+            'evt\\V1\\Rest\\VistaUsuariosXTipo\\Controller' => 'HalJson',
+            'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\Controller' => 'HalJson',
+            'evt\\V1\\Rest\\VistaEvento\\Controller' => 'HalJson',
         ),
         'accept_whitelist' => array(
             'evt\\V1\\Rest\\Usuarios\\Controller' => array(
@@ -1424,11 +1533,6 @@ return array(
                 1 => 'application/hal+json',
                 2 => 'application/json',
             ),
-            'evt\\V1\\Rest\\UsuariosSubCategorias\\Controller' => array(
-                0 => 'application/vnd.evt.v1+json',
-                1 => 'application/hal+json',
-                2 => 'application/json',
-            ),
             'evt\\V1\\Rest\\UsuariosMuroComentariosModerar\\Controller' => array(
                 0 => 'application/vnd.evt.v1+json',
                 1 => 'application/hal+json',
@@ -1560,6 +1664,31 @@ return array(
                 2 => 'application/json',
             ),
             'evt\\V1\\Rest\\VistaEstadoCiudad\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/hal+json',
+                2 => 'application/json',
+            ),
+            'evt\\V1\\Rest\\VistaSubcategoria\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/hal+json',
+                2 => 'application/json',
+            ),
+            'evt\\V1\\Rest\\VistaUsuarioObtenerBasico\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/hal+json',
+                2 => 'application/json',
+            ),
+            'evt\\V1\\Rest\\VistaUsuariosXTipo\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/hal+json',
+                2 => 'application/json',
+            ),
+            'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/hal+json',
+                2 => 'application/json',
+            ),
+            'evt\\V1\\Rest\\VistaEvento\\Controller' => array(
                 0 => 'application/vnd.evt.v1+json',
                 1 => 'application/hal+json',
                 2 => 'application/json',
@@ -1618,10 +1747,6 @@ return array(
                 0 => 'application/vnd.evt.v1+json',
                 1 => 'application/json',
             ),
-            'evt\\V1\\Rest\\UsuariosSubCategorias\\Controller' => array(
-                0 => 'application/vnd.evt.v1+json',
-                1 => 'application/json',
-            ),
             'evt\\V1\\Rest\\UsuariosMuroComentariosModerar\\Controller' => array(
                 0 => 'application/vnd.evt.v1+json',
                 1 => 'application/json',
@@ -1727,6 +1852,26 @@ return array(
                 1 => 'application/json',
             ),
             'evt\\V1\\Rest\\VistaEstadoCiudad\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/json',
+            ),
+            'evt\\V1\\Rest\\VistaSubcategoria\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/json',
+            ),
+            'evt\\V1\\Rest\\VistaUsuarioObtenerBasico\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/json',
+            ),
+            'evt\\V1\\Rest\\VistaUsuariosXTipo\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/json',
+            ),
+            'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/json',
+            ),
+            'evt\\V1\\Rest\\VistaEvento\\Controller' => array(
                 0 => 'application/vnd.evt.v1+json',
                 1 => 'application/json',
             ),
@@ -1819,13 +1964,13 @@ return array(
                 'is_collection' => true,
             ),
             'evt\\V1\\Rest\\UsuariosMuroGaleria\\UsuariosMuroGaleriaEntity' => array(
-                'entity_identifier_name' => 'id',
+                'entity_identifier_name' => 'photo_id',
                 'route_name' => 'evt.rest.usuarios-muro-galeria',
                 'route_identifier_name' => 'usuarios_muro_galeria_id',
                 'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
             ),
             'evt\\V1\\Rest\\UsuariosMuroGaleria\\UsuariosMuroGaleriaCollection' => array(
-                'entity_identifier_name' => 'id',
+                'entity_identifier_name' => 'photo_id',
                 'route_name' => 'evt.rest.usuarios-muro-galeria',
                 'route_identifier_name' => 'usuarios_muro_galeria_id',
                 'is_collection' => true,
@@ -1890,18 +2035,6 @@ return array(
                 'route_identifier_name' => 'usuarios_seguidores_id',
                 'is_collection' => true,
             ),
-            'evt\\V1\\Rest\\UsuariosSubCategorias\\UsuariosSubCategoriasEntity' => array(
-                'entity_identifier_name' => 'id',
-                'route_name' => 'evt.rest.usuarios-sub-categorias',
-                'route_identifier_name' => 'usuarios_sub_categorias_id',
-                'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
-            ),
-            'evt\\V1\\Rest\\UsuariosSubCategorias\\UsuariosSubCategoriasCollection' => array(
-                'entity_identifier_name' => 'id',
-                'route_name' => 'evt.rest.usuarios-sub-categorias',
-                'route_identifier_name' => 'usuarios_sub_categorias_id',
-                'is_collection' => true,
-            ),
             'evt\\V1\\Rest\\UsuariosMuroComentariosModerar\\UsuariosMuroComentariosModerarEntity' => array(
                 'entity_identifier_name' => 'id',
                 'route_name' => 'evt.rest.usuarios-muro-comentarios-moderar',
@@ -1915,13 +2048,13 @@ return array(
                 'is_collection' => true,
             ),
             'evt\\V1\\Rest\\BlogPost\\BlogPostEntity' => array(
-                'entity_identifier_name' => 'id',
+                'entity_identifier_name' => 'post_id',
                 'route_name' => 'evt.rest.blog-post',
                 'route_identifier_name' => 'blog_post_id',
                 'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
             ),
             'evt\\V1\\Rest\\BlogPost\\BlogPostCollection' => array(
-                'entity_identifier_name' => 'id',
+                'entity_identifier_name' => 'post_id',
                 'route_name' => 'evt.rest.blog-post',
                 'route_identifier_name' => 'blog_post_id',
                 'is_collection' => true,
@@ -2011,13 +2144,13 @@ return array(
                 'is_collection' => true,
             ),
             'evt\\V1\\Rest\\Eventos\\EventosEntity' => array(
-                'entity_identifier_name' => 'id',
+                'entity_identifier_name' => 'event_id',
                 'route_name' => 'evt.rest.eventos',
                 'route_identifier_name' => 'eventos_id',
                 'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
             ),
             'evt\\V1\\Rest\\Eventos\\EventosCollection' => array(
-                'entity_identifier_name' => 'id',
+                'entity_identifier_name' => 'event_id',
                 'route_name' => 'evt.rest.eventos',
                 'route_identifier_name' => 'eventos_id',
                 'is_collection' => true,
@@ -2226,6 +2359,66 @@ return array(
                 'route_identifier_name' => 'vista_estado_ciudad_id',
                 'is_collection' => true,
             ),
+            'evt\\V1\\Rest\\VistaSubcategoria\\VistaSubcategoriaEntity' => array(
+                'entity_identifier_name' => 'id_sub_categoria',
+                'route_name' => 'evt.rest.vista-subcategoria',
+                'route_identifier_name' => 'vista_subcategoria_id',
+                'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
+            ),
+            'evt\\V1\\Rest\\VistaSubcategoria\\VistaSubcategoriaCollection' => array(
+                'entity_identifier_name' => 'id_sub_categoria',
+                'route_name' => 'evt.rest.vista-subcategoria',
+                'route_identifier_name' => 'vista_subcategoria_id',
+                'is_collection' => true,
+            ),
+            'evt\\V1\\Rest\\VistaUsuarioObtenerBasico\\VistaUsuarioObtenerBasicoEntity' => array(
+                'entity_identifier_name' => 'user_id',
+                'route_name' => 'evt.rest.vista-usuario-obtener-basico',
+                'route_identifier_name' => 'vista_usuario_obtener_basico_id',
+                'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
+            ),
+            'evt\\V1\\Rest\\VistaUsuarioObtenerBasico\\VistaUsuarioObtenerBasicoCollection' => array(
+                'entity_identifier_name' => 'user_id',
+                'route_name' => 'evt.rest.vista-usuario-obtener-basico',
+                'route_identifier_name' => 'vista_usuario_obtener_basico_id',
+                'is_collection' => true,
+            ),
+            'evt\\V1\\Rest\\VistaUsuariosXTipo\\VistaUsuariosXTipoEntity' => array(
+                'entity_identifier_name' => 'usuarios_id',
+                'route_name' => 'evt.rest.vista-usuarios-x-tipo',
+                'route_identifier_name' => 'vista_usuarios_x_tipo_id',
+                'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
+            ),
+            'evt\\V1\\Rest\\VistaUsuariosXTipo\\VistaUsuariosXTipoCollection' => array(
+                'entity_identifier_name' => 'usuarios_id',
+                'route_name' => 'evt.rest.vista-usuarios-x-tipo',
+                'route_identifier_name' => 'vista_usuarios_x_tipo_id',
+                'is_collection' => true,
+            ),
+            'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\VistaUsuarioSubcategoriasEntity' => array(
+                'entity_identifier_name' => 'usuarios_id',
+                'route_name' => 'evt.rest.vista-usuario-subcategorias',
+                'route_identifier_name' => 'usuarios_id',
+                'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
+            ),
+            'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\VistaUsuarioSubcategoriasCollection' => array(
+                'entity_identifier_name' => 'usuarios_id',
+                'route_name' => 'evt.rest.vista-usuario-subcategorias',
+                'route_identifier_name' => 'usuarios_id',
+                'is_collection' => true,
+            ),
+            'evt\\V1\\Rest\\VistaEvento\\VistaEventoEntity' => array(
+                'entity_identifier_name' => 'event_id',
+                'route_name' => 'evt.rest.vista-evento',
+                'route_identifier_name' => 'vista_evento_id',
+                'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
+            ),
+            'evt\\V1\\Rest\\VistaEvento\\VistaEventoCollection' => array(
+                'entity_identifier_name' => 'event_id',
+                'route_name' => 'evt.rest.vista-evento',
+                'route_identifier_name' => 'vista_evento_id',
+                'is_collection' => true,
+            ),
         ),
     ),
     'zf-apigility' => array(
@@ -2285,7 +2478,8 @@ return array(
                 'table_name' => 'usuarios_muro_galeria',
                 'hydrator_name' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
                 'controller_service_name' => 'evt\\V1\\Rest\\UsuariosMuroGaleria\\Controller',
-                'entity_identifier_name' => 'id',
+                'entity_identifier_name' => 'photo_id',
+                'table_service' => 'evt\\V1\\Rest\\UsuariosMuroGaleria\\UsuariosMuroGaleriaResource\\Table',
             ),
             'evt\\V1\\Rest\\UsuariosMuroGaleriaModerar\\UsuariosMuroGaleriaModerarResource' => array(
                 'adapter_name' => 'MySql-Prueba',
@@ -2322,13 +2516,6 @@ return array(
                 'controller_service_name' => 'evt\\V1\\Rest\\UsuariosSeguidores\\Controller',
                 'entity_identifier_name' => 'id',
             ),
-            'evt\\V1\\Rest\\UsuariosSubCategorias\\UsuariosSubCategoriasResource' => array(
-                'adapter_name' => 'MySql-Prueba',
-                'table_name' => 'usuarios_sub_categorias',
-                'hydrator_name' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
-                'controller_service_name' => 'evt\\V1\\Rest\\UsuariosSubCategorias\\Controller',
-                'entity_identifier_name' => 'id',
-            ),
             'evt\\V1\\Rest\\UsuariosMuroComentariosModerar\\UsuariosMuroComentariosModerarResource' => array(
                 'adapter_name' => 'MySql-Prueba',
                 'table_name' => 'usuarios_muro_comentarios_moderar',
@@ -2341,7 +2528,8 @@ return array(
                 'table_name' => 'blog_post',
                 'hydrator_name' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
                 'controller_service_name' => 'evt\\V1\\Rest\\BlogPost\\Controller',
-                'entity_identifier_name' => 'id',
+                'entity_identifier_name' => 'post_id',
+                'table_service' => 'evt\\V1\\Rest\\BlogPost\\BlogPostResource\\Table',
             ),
             'evt\\V1\\Rest\\BlogPostGaleriaModerar\\BlogPostGaleriaModerarResource' => array(
                 'adapter_name' => 'MySql-Prueba',
@@ -2397,7 +2585,8 @@ return array(
                 'table_name' => 'eventos',
                 'hydrator_name' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
                 'controller_service_name' => 'evt\\V1\\Rest\\Eventos\\Controller',
-                'entity_identifier_name' => 'id',
+                'entity_identifier_name' => 'event_id',
+                'table_service' => 'evt\\V1\\Rest\\Eventos\\EventosResource\\Table',
             ),
             'evt\\V1\\Rest\\EventosComentarios\\EventosComentariosResource' => array(
                 'adapter_name' => 'MySql-Prueba',
@@ -2542,9 +2731,6 @@ return array(
         'evt\\V1\\Rest\\UsuariosSeguidores\\Controller' => array(
             'input_filter' => 'evt\\V1\\Rest\\UsuariosSeguidores\\Validator',
         ),
-        'evt\\V1\\Rest\\UsuariosSubCategorias\\Controller' => array(
-            'input_filter' => 'evt\\V1\\Rest\\UsuariosSubCategorias\\Validator',
-        ),
         'evt\\V1\\Rest\\UsuariosRoles\\Controller' => array(
             'input_filter' => 'evt\\V1\\Rest\\UsuariosRoles\\Validator',
         ),
@@ -2631,6 +2817,15 @@ return array(
         ),
         'evt\\V1\\Rest\\VistaEstadoCiudad\\Controller' => array(
             'input_filter' => 'evt\\V1\\Rest\\VistaEstadoCiudad\\Validator',
+        ),
+        'evt\\V1\\Rest\\VistaSubcategoria\\Controller' => array(
+            'input_filter' => 'evt\\V1\\Rest\\VistaSubcategoria\\Validator',
+        ),
+        'evt\\V1\\Rest\\VistaUsuariosXTipo\\Controller' => array(
+            'input_filter' => 'evt\\V1\\Rest\\VistaUsuariosXTipo\\Validator',
+        ),
+        'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\Controller' => array(
+            'input_filter' => 'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\Validator',
         ),
     ),
     'input_filter_specs' => array(
@@ -2751,19 +2946,8 @@ return array(
                 ),
                 'validators' => array(
                     0 => array(
-                        'name' => 'ZF\\ContentValidation\\Validator\\DbNoRecordExists',
-                        'options' => array(
-                            'adapter' => 'MySql-Prueba',
-                            'table' => 'usuarios',
-                            'field' => 'phone_mobile',
-                        ),
-                    ),
-                    1 => array(
                         'name' => 'Zend\\Validator\\StringLength',
-                        'options' => array(
-                            'min' => 1,
-                            'max' => '17',
-                        ),
+                        'options' => array(),
                     ),
                 ),
                 'description' => '(string) - Numero de telefono movil.',
@@ -3076,41 +3260,6 @@ return array(
         ),
         'evt\\V1\\Rest\\UsuariosMuroGaleria\\Validator' => array(
             0 => array(
-                'name' => 'post_id',
-                'required' => true,
-                'filters' => array(
-                    0 => array(
-                        'name' => 'Zend\\Filter\\StripTags',
-                    ),
-                    1 => array(
-                        'name' => 'Zend\\Filter\\Digits',
-                    ),
-                ),
-                'validators' => array(
-                    0 => array(
-                        'name' => 'ZF\\ContentValidation\\Validator\\DbRecordExists',
-                        'options' => array(
-                            'adapter' => 'MySql-Prueba',
-                            'table' => 'usuarios_muro',
-                            'field' => 'post_id',
-                        ),
-                    ),
-                ),
-            ),
-            1 => array(
-                'name' => 'posicion',
-                'required' => true,
-                'filters' => array(
-                    0 => array(
-                        'name' => 'Zend\\Filter\\StripTags',
-                    ),
-                    1 => array(
-                        'name' => 'Zend\\Filter\\Digits',
-                    ),
-                ),
-                'validators' => array(),
-            ),
-            2 => array(
                 'name' => 'photo',
                 'required' => true,
                 'filters' => array(
@@ -3131,7 +3280,7 @@ return array(
                     ),
                 ),
             ),
-            3 => array(
+            1 => array(
                 'name' => 'caption',
                 'required' => true,
                 'filters' => array(
@@ -3152,7 +3301,7 @@ return array(
                     ),
                 ),
             ),
-            4 => array(
+            2 => array(
                 'name' => 'deleted',
                 'required' => true,
                 'filters' => array(
@@ -3165,11 +3314,51 @@ return array(
                 ),
                 'validators' => array(),
             ),
-            5 => array(
+            3 => array(
                 'name' => 'posteado_en',
                 'required' => true,
                 'filters' => array(),
                 'validators' => array(),
+            ),
+            4 => array(
+                'required' => true,
+                'validators' => array(
+                    0 => array(
+                        'name' => 'ZF\\ContentValidation\\Validator\\DbRecordExists',
+                        'options' => array(
+                            'adapter' => 'MySql-Prueba',
+                            'table' => 'usuarios',
+                            'field' => 'user_id',
+                        ),
+                    ),
+                ),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\StripTags',
+                        'options' => array(),
+                    ),
+                    1 => array(
+                        'name' => 'Zend\\Filter\\Digits',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'usuarios_id',
+            ),
+            5 => array(
+                'required' => true,
+                'validators' => array(
+                    0 => array(
+                        'name' => 'Zend\\I18n\\Validator\\IsInt',
+                        'options' => array(),
+                    ),
+                ),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\ToInt',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'posicion',
             ),
         ),
         'evt\\V1\\Rest\\UsuariosBloqueo\\Validator' => array(
@@ -3338,7 +3527,64 @@ return array(
                 'validators' => array(),
             ),
         ),
-        'evt\\V1\\Rest\\UsuariosSubCategorias\\Validator' => array(),
+        'evt\\V1\\Rest\\UsuariosSubCategorias\\Validator' => array(
+            0 => array(
+                'required' => true,
+                'validators' => array(
+                    0 => array(
+                        'name' => 'Zend\\I18n\\Validator\\IsInt',
+                        'options' => array(),
+                    ),
+                    1 => array(
+                        'name' => 'ZF\\ContentValidation\\Validator\\DbRecordExists',
+                        'options' => array(
+                            'adapter' => 'MySql-Prueba',
+                            'table' => 'eventos_sub_categorias',
+                            'field' => 'id_sub_categoria',
+                        ),
+                    ),
+                ),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\ToInt',
+                        'options' => array(),
+                    ),
+                    1 => array(
+                        'name' => 'Zend\\Filter\\StripTags',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'id_sub_categoria',
+            ),
+            1 => array(
+                'required' => true,
+                'validators' => array(
+                    0 => array(
+                        'name' => 'ZF\\ContentValidation\\Validator\\DbRecordExists',
+                        'options' => array(
+                            'adapter' => 'MySql-Prueba',
+                            'table' => 'usuarios',
+                            'field' => 'user_id',
+                        ),
+                    ),
+                    1 => array(
+                        'name' => 'Zend\\I18n\\Validator\\IsInt',
+                        'options' => array(),
+                    ),
+                ),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\ToInt',
+                        'options' => array(),
+                    ),
+                    1 => array(
+                        'name' => 'Zend\\Filter\\StripTags',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'usuarios_id',
+            ),
+        ),
         'evt\\V1\\Rest\\UsuariosRoles\\Validator' => array(
             0 => array(
                 'name' => 'nombre_rol',
@@ -4136,40 +4382,18 @@ return array(
                 ),
             ),
             3 => array(
-                'name' => 'sub_categoria',
-                'required' => false,
-                'filters' => array(
-                    0 => array(
-                        'name' => 'Zend\\Filter\\StripTags',
-                    ),
-                    1 => array(
-                        'name' => 'Zend\\Filter\\Digits',
-                    ),
-                ),
-                'validators' => array(
-                    0 => array(
-                        'name' => 'ZF\\ContentValidation\\Validator\\DbRecordExists',
-                        'options' => array(
-                            'adapter' => 'MySql-Prueba',
-                            'table' => 'eventos_sub_categorias',
-                            'field' => 'id_sub_categoria',
-                        ),
-                    ),
-                ),
-            ),
-            4 => array(
                 'name' => 'fecha_evento',
                 'required' => true,
                 'filters' => array(),
                 'validators' => array(),
             ),
-            5 => array(
+            4 => array(
                 'name' => 'fecha_fin_registro',
                 'required' => true,
                 'filters' => array(),
                 'validators' => array(),
             ),
-            6 => array(
+            5 => array(
                 'name' => 'recurrencia',
                 'required' => false,
                 'filters' => array(
@@ -4190,19 +4414,19 @@ return array(
                     ),
                 ),
             ),
-            7 => array(
+            6 => array(
                 'name' => 'recurrencia_desde',
                 'required' => false,
                 'filters' => array(),
                 'validators' => array(),
             ),
-            8 => array(
+            7 => array(
                 'name' => 'recurrencia_hasta',
                 'required' => false,
                 'filters' => array(),
                 'validators' => array(),
             ),
-            9 => array(
+            8 => array(
                 'name' => 'direccion',
                 'required' => true,
                 'filters' => array(
@@ -4223,7 +4447,7 @@ return array(
                     ),
                 ),
             ),
-            10 => array(
+            9 => array(
                 'name' => 'lugar_encuentro',
                 'required' => false,
                 'filters' => array(
@@ -4244,7 +4468,7 @@ return array(
                     ),
                 ),
             ),
-            11 => array(
+            10 => array(
                 'name' => 'ciudad_id',
                 'required' => false,
                 'filters' => array(
@@ -4266,7 +4490,7 @@ return array(
                     ),
                 ),
             ),
-            12 => array(
+            11 => array(
                 'name' => 'aforo',
                 'required' => true,
                 'filters' => array(
@@ -4279,7 +4503,7 @@ return array(
                 ),
                 'validators' => array(),
             ),
-            13 => array(
+            12 => array(
                 'name' => 'plazas',
                 'required' => false,
                 'filters' => array(
@@ -4292,13 +4516,13 @@ return array(
                 ),
                 'validators' => array(),
             ),
-            14 => array(
+            13 => array(
                 'name' => 'precio',
                 'required' => true,
                 'filters' => array(),
                 'validators' => array(),
             ),
-            15 => array(
+            14 => array(
                 'name' => 'usuario_organizador',
                 'required' => false,
                 'filters' => array(
@@ -4320,7 +4544,7 @@ return array(
                     ),
                 ),
             ),
-            16 => array(
+            15 => array(
                 'name' => 'jurado',
                 'required' => false,
                 'filters' => array(
@@ -4341,7 +4565,7 @@ return array(
                     ),
                 ),
             ),
-            17 => array(
+            16 => array(
                 'name' => 'edad_recomendada',
                 'required' => false,
                 'filters' => array(
@@ -4354,62 +4578,15 @@ return array(
                 ),
                 'validators' => array(),
             ),
-            18 => array(
-                'name' => 'sexo_recomendado',
-                'required' => false,
-                'filters' => array(
-                    0 => array(
-                        'name' => 'Zend\\Filter\\StripTags',
-                    ),
-                    1 => array(
-                        'name' => 'Zend\\Filter\\Digits',
-                    ),
-                ),
-                'validators' => array(),
-            ),
-            19 => array(
-                'name' => 'permite_comentarios',
-                'required' => true,
-                'filters' => array(
-                    0 => array(
-                        'name' => 'Zend\\Filter\\StripTags',
-                    ),
-                    1 => array(
-                        'name' => 'Zend\\Filter\\Digits',
-                    ),
-                ),
-                'validators' => array(),
-            ),
-            20 => array(
-                'name' => 'terminos_condiciones',
-                'required' => true,
-                'filters' => array(
-                    0 => array(
-                        'name' => 'Zend\\Filter\\StringTrim',
-                    ),
-                    1 => array(
-                        'name' => 'Zend\\Filter\\StripTags',
-                    ),
-                ),
-                'validators' => array(
-                    0 => array(
-                        'name' => 'Zend\\Validator\\StringLength',
-                        'options' => array(
-                            'min' => 1,
-                            'max' => '65535',
-                        ),
-                    ),
-                ),
-            ),
-            21 => array(
+            17 => array(
                 'name' => 'creado_en',
-                'required' => true,
+                'required' => false,
                 'filters' => array(),
                 'validators' => array(),
             ),
-            22 => array(
+            18 => array(
                 'name' => 'pagina_web',
-                'required' => true,
+                'required' => false,
                 'filters' => array(
                     0 => array(
                         'name' => 'Zend\\Filter\\StringTrim',
@@ -4428,7 +4605,7 @@ return array(
                     ),
                 ),
             ),
-            23 => array(
+            19 => array(
                 'name' => 'mostrar_comentarios',
                 'required' => true,
                 'filters' => array(
@@ -4441,7 +4618,7 @@ return array(
                 ),
                 'validators' => array(),
             ),
-            24 => array(
+            20 => array(
                 'name' => 'mostrar_inscritos',
                 'required' => true,
                 'filters' => array(
@@ -4453,6 +4630,74 @@ return array(
                     ),
                 ),
                 'validators' => array(),
+            ),
+            21 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'latitud',
+            ),
+            22 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'longitud',
+            ),
+            23 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\Digits',
+                        'options' => array(),
+                    ),
+                    1 => array(
+                        'name' => 'Zend\\Filter\\StripTags',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'permite_comentarios',
+            ),
+            24 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\StringTrim',
+                        'options' => array(),
+                    ),
+                    1 => array(
+                        'name' => 'Zend\\Filter\\StripTags',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'terminos_condiciones',
+            ),
+            25 => array(
+                'required' => true,
+                'validators' => array(
+                    0 => array(
+                        'name' => 'ZF\\ContentValidation\\Validator\\DbRecordExists',
+                        'options' => array(
+                            'adapter' => 'MySql-Prueba',
+                            'table' => 'eventos_sub_categorias',
+                            'field' => 'id_sub_categoria',
+                        ),
+                    ),
+                ),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\ToInt',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'id_sub_categoria',
+            ),
+            26 => array(
+                'required' => false,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'sexo_recomendado',
             ),
         ),
         'evt\\V1\\Rest\\EventosComentariosLikes\\Validator' => array(
@@ -4747,7 +4992,7 @@ return array(
             ),
             2 => array(
                 'name' => 'descripcion_sub_categoria',
-                'required' => true,
+                'required' => false,
                 'filters' => array(
                     0 => array(
                         'name' => 'Zend\\Filter\\StringTrim',
@@ -5180,22 +5425,34 @@ return array(
                 ),
                 'name' => 'pais_id',
             ),
-        ),
-        'evt\\V1\\Rest\\LugarPais\\Validator' => array(
-            0 => array(
+            1 => array(
                 'required' => true,
-                'validators' => array(
+                'validators' => array(),
+                'filters' => array(
                     0 => array(
-                        'name' => 'Zend\\Validator\\StringLength',
+                        'name' => 'Zend\\Filter\\ToInt',
                         'options' => array(),
                     ),
                 ),
+                'name' => 'estado_id',
+            ),
+            2 => array(
+                'required' => true,
+                'validators' => array(),
                 'filters' => array(
                     0 => array(
                         'name' => 'Zend\\Filter\\StringTrim',
                         'options' => array(),
                     ),
                 ),
+                'name' => 'descripcion',
+            ),
+        ),
+        'evt\\V1\\Rest\\LugarPais\\Validator' => array(
+            0 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
                 'name' => 'descripcion',
             ),
         ),
@@ -5214,6 +5471,119 @@ return array(
                     ),
                 ),
                 'name' => 'estado_id',
+            ),
+            1 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\ToInt',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'ciudad_id',
+            ),
+            2 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\StringTrim',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'descripcion',
+            ),
+        ),
+        'evt\\V1\\Rest\\VistaSubcategoria\\Validator' => array(
+            0 => array(
+                'required' => true,
+                'validators' => array(
+                    0 => array(
+                        'name' => 'Zend\\I18n\\Validator\\IsInt',
+                        'options' => array(),
+                    ),
+                    1 => array(
+                        'name' => 'Zend\\I18n\\Validator\\Int',
+                        'options' => array(),
+                    ),
+                    2 => array(
+                        'name' => 'ZF\\ContentValidation\\Validator\\DbRecordExists',
+                        'options' => array(
+                            'adapter' => 'MySql-Prueba',
+                            'table' => 'eventos_categorias',
+                            'field' => 'id_categoria',
+                        ),
+                    ),
+                ),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\Whitelist',
+                        'options' => array(),
+                    ),
+                    1 => array(
+                        'name' => 'Zend\\Filter\\ToInt',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'id_categoria',
+            ),
+            1 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'nombre_sub_categoria',
+            ),
+            2 => array(
+                'required' => false,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'descripcion_sub_categoria',
+            ),
+        ),
+        'evt\\V1\\Rest\\VistaUsuariosXTipo\\Validator' => array(
+            0 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\StringTrim',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'rol',
+            ),
+        ),
+        'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\Validator' => array(
+            0 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'usuarios_id',
+            ),
+            1 => array(
+                'required' => true,
+                'validators' => array(
+                    0 => array(
+                        'name' => 'Zend\\I18n\\Validator\\IsInt',
+                        'options' => array(),
+                    ),
+                    1 => array(
+                        'name' => 'ZF\\ContentValidation\\Validator\\DbRecordExists',
+                        'options' => array(
+                            'adapter' => 'MySql-Prueba',
+                            'table' => 'eventos_sub_categorias',
+                            'field' => 'id_sub_categoria',
+                        ),
+                    ),
+                ),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\ToInt',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'id_sub_categoria',
             ),
         ),
     ),

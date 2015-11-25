@@ -4110,73 +4110,6 @@
         ]
     },
     {
-        "name": "zfcampus/zf-content-negotiation",
-        "version": "1.1.1",
-        "version_normalized": "1.1.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/zfcampus/zf-content-negotiation.git",
-            "reference": "783f5cdd733eaafb676ceb4429a872cda63db7f0"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/zfcampus/zf-content-negotiation/zipball/783f5cdd733eaafb676ceb4429a872cda63db7f0",
-            "reference": "783f5cdd733eaafb676ceb4429a872cda63db7f0",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5",
-            "zendframework/zend-eventmanager": "~2.3",
-            "zendframework/zend-filter": "~2.3",
-            "zendframework/zend-json": "~2.3",
-            "zendframework/zend-mvc": "~2.3",
-            "zendframework/zend-servicemanager": "~2.3",
-            "zendframework/zend-stdlib": "~2.3",
-            "zendframework/zend-validator": "~2.3",
-            "zendframework/zend-view": "~2.3",
-            "zfcampus/zf-api-problem": "~1.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.7",
-            "squizlabs/php_codesniffer": "^2.3.1",
-            "zendframework/zend-http": "~2.3",
-            "zendframework/zend-loader": "~2.3",
-            "zfcampus/zf-hal": "~1.0"
-        },
-        "suggest": {
-            "zendframework/zend-console": "~2.3, if you intend to use the RequestFactory"
-        },
-        "time": "2015-07-16 14:10:36",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.1-dev",
-                "dev-develop": "1.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "ZF\\ContentNegotiation\\": "src/"
-            },
-            "classmap": [
-                "Module.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "description": "ZF2 Module providing content-negotiation features",
-        "homepage": "http://apigility.org/",
-        "keywords": [
-            "content-negotiation",
-            "module",
-            "zend",
-            "zf2"
-        ]
-    },
-    {
         "name": "zfcampus/zf-configuration",
         "version": "1.1.0",
         "version_normalized": "1.1.0.0",
@@ -5154,139 +5087,6 @@
         ]
     },
     {
-        "name": "zfcampus/zf-rest",
-        "version": "1.2.0",
-        "version_normalized": "1.2.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/zfcampus/zf-rest.git",
-            "reference": "417f95f9f534e930e8d0d80b00642d2058a682ff"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/zfcampus/zf-rest/zipball/417f95f9f534e930e8d0d80b00642d2058a682ff",
-            "reference": "417f95f9f534e930e8d0d80b00642d2058a682ff",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5",
-            "zendframework/zend-eventmanager": "^2.4.0",
-            "zendframework/zend-json": "^2.4.0",
-            "zendframework/zend-loader": "^2.4.0",
-            "zendframework/zend-mvc": "^2.4.0",
-            "zendframework/zend-paginator": "^2.4.0",
-            "zendframework/zend-stdlib": "^2.4.0",
-            "zfcampus/zf-api-problem": "~1.0",
-            "zfcampus/zf-content-negotiation": "~1.0",
-            "zfcampus/zf-hal": "~1.1",
-            "zfcampus/zf-mvc-auth": "~1.1"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.7",
-            "squizlabs/php_codesniffer": "^2.3.1",
-            "zendframework/zend-console": "^2.4.0",
-            "zendframework/zend-escaper": "^2.4.0",
-            "zendframework/zend-http": "^2.4.0",
-            "zendframework/zend-inputfilter": "^2.4.0",
-            "zendframework/zend-servicemanager": "^2.4.0",
-            "zendframework/zend-uri": "^2.4.0",
-            "zendframework/zend-validator": "^2.4.0",
-            "zendframework/zend-view": "^2.4.0"
-        },
-        "time": "2015-07-15 17:12:33",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.2-dev",
-                "dev-develop": "1.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "ZF\\Rest\\": "src/"
-            },
-            "classmap": [
-                "Module.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "description": "ZF2 Module providing structure for RESTful resources",
-        "homepage": "http://apigility.org/",
-        "keywords": [
-            "module",
-            "rest",
-            "zend",
-            "zf2"
-        ]
-    },
-    {
-        "name": "zfcampus/zf-content-validation",
-        "version": "1.2.0",
-        "version_normalized": "1.2.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/zfcampus/zf-content-validation.git",
-            "reference": "e9be5a59b04c32ea3ab3a3a68667f675c4a0dbec"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/zfcampus/zf-content-validation/zipball/e9be5a59b04c32ea3ab3a3a68667f675c4a0dbec",
-            "reference": "e9be5a59b04c32ea3ab3a3a68667f675c4a0dbec",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5",
-            "zendframework/zend-eventmanager": "~2.3",
-            "zendframework/zend-filter": "~2.3",
-            "zendframework/zend-http": "~2.3",
-            "zendframework/zend-inputfilter": "~2.4",
-            "zendframework/zend-mvc": "~2.3",
-            "zendframework/zend-servicemanager": "~2.3",
-            "zendframework/zend-stdlib": "~2.3",
-            "zendframework/zend-validator": "~2.3",
-            "zfcampus/zf-api-problem": "~1.0",
-            "zfcampus/zf-content-negotiation": "~1.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.7",
-            "squizlabs/php_codesniffer": "^2.3.1",
-            "zendframework/zend-loader": "~2.3"
-        },
-        "time": "2015-07-15 16:22:06",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.2-dev",
-                "dev-develop": "1.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "ZF\\ContentValidation\\": "src/"
-            },
-            "classmap": [
-                "Module.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "description": "ZF2 Module providing incoming content validation",
-        "homepage": "http://apigility.org/",
-        "keywords": [
-            "module",
-            "validation",
-            "zend",
-            "zf2"
-        ]
-    },
-    {
         "name": "rwoverdijk/assetmanager",
         "version": "1.4.4",
         "version_normalized": "1.4.4.0",
@@ -5873,6 +5673,206 @@
             "documentation",
             "module",
             "swagger",
+            "zend",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zfcampus/zf-content-negotiation",
+        "version": "dev-develop",
+        "version_normalized": "dev-develop",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zfcampus/zf-content-negotiation.git",
+            "reference": "1b8ce9102309e5790eea8fcb7797f771d6434750"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zfcampus/zf-content-negotiation/zipball/1b8ce9102309e5790eea8fcb7797f771d6434750",
+            "reference": "1b8ce9102309e5790eea8fcb7797f771d6434750",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5",
+            "zendframework/zend-eventmanager": "~2.3",
+            "zendframework/zend-filter": "~2.3",
+            "zendframework/zend-json": "~2.3",
+            "zendframework/zend-mvc": "~2.3",
+            "zendframework/zend-servicemanager": "~2.3",
+            "zendframework/zend-stdlib": "~2.3",
+            "zendframework/zend-validator": "~2.3",
+            "zendframework/zend-view": "~2.3",
+            "zfcampus/zf-api-problem": "~1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.7",
+            "squizlabs/php_codesniffer": "^2.3.1",
+            "zendframework/zend-http": "~2.3",
+            "zendframework/zend-loader": "~2.3",
+            "zfcampus/zf-hal": "~1.0"
+        },
+        "suggest": {
+            "zendframework/zend-console": "~2.3, if you intend to use the RequestFactory"
+        },
+        "time": "2015-07-16 14:10:45",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1-dev",
+                "dev-develop": "1.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "ZF\\ContentNegotiation\\": "src/"
+            },
+            "classmap": [
+                "Module.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "ZF2 Module providing content-negotiation features",
+        "homepage": "http://apigility.org/",
+        "keywords": [
+            "content-negotiation",
+            "module",
+            "zend",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zfcampus/zf-content-validation",
+        "version": "dev-develop",
+        "version_normalized": "dev-develop",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zfcampus/zf-content-validation.git",
+            "reference": "47655de2bffef991630831ce2e62d1f4c5252ddf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zfcampus/zf-content-validation/zipball/47655de2bffef991630831ce2e62d1f4c5252ddf",
+            "reference": "47655de2bffef991630831ce2e62d1f4c5252ddf",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5",
+            "zendframework/zend-eventmanager": "~2.3",
+            "zendframework/zend-filter": "~2.3",
+            "zendframework/zend-http": "~2.3",
+            "zendframework/zend-inputfilter": "~2.4",
+            "zendframework/zend-mvc": "~2.3",
+            "zendframework/zend-servicemanager": "~2.3",
+            "zendframework/zend-stdlib": "~2.3",
+            "zendframework/zend-validator": "~2.3",
+            "zfcampus/zf-api-problem": "~1.0",
+            "zfcampus/zf-content-negotiation": "~1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.7",
+            "squizlabs/php_codesniffer": "^2.3.1",
+            "zendframework/zend-loader": "~2.3"
+        },
+        "time": "2015-07-15 16:22:12",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2-dev",
+                "dev-develop": "1.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "ZF\\ContentValidation\\": "src/"
+            },
+            "classmap": [
+                "Module.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "ZF2 Module providing incoming content validation",
+        "homepage": "http://apigility.org/",
+        "keywords": [
+            "module",
+            "validation",
+            "zend",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zfcampus/zf-rest",
+        "version": "dev-develop",
+        "version_normalized": "dev-develop",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zfcampus/zf-rest.git",
+            "reference": "764882eaeca76e546037a2074797cb05c37cb4bc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zfcampus/zf-rest/zipball/764882eaeca76e546037a2074797cb05c37cb4bc",
+            "reference": "764882eaeca76e546037a2074797cb05c37cb4bc",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5",
+            "zendframework/zend-eventmanager": "^2.4.0",
+            "zendframework/zend-json": "^2.4.0",
+            "zendframework/zend-loader": "^2.4.0",
+            "zendframework/zend-mvc": "^2.4.0",
+            "zendframework/zend-paginator": "^2.4.0",
+            "zendframework/zend-stdlib": "^2.4.0",
+            "zfcampus/zf-api-problem": "~1.0",
+            "zfcampus/zf-content-negotiation": "~1.0",
+            "zfcampus/zf-hal": "~1.1",
+            "zfcampus/zf-mvc-auth": "~1.1"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.7",
+            "squizlabs/php_codesniffer": "^2.3.1",
+            "zendframework/zend-console": "^2.4.0",
+            "zendframework/zend-escaper": "^2.4.0",
+            "zendframework/zend-http": "^2.4.0",
+            "zendframework/zend-inputfilter": "^2.4.0",
+            "zendframework/zend-servicemanager": "^2.4.0",
+            "zendframework/zend-uri": "^2.4.0",
+            "zendframework/zend-validator": "^2.4.0",
+            "zendframework/zend-view": "^2.4.0"
+        },
+        "time": "2015-09-23 18:32:53",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2-dev",
+                "dev-develop": "1.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "ZF\\Rest\\": "src/"
+            },
+            "classmap": [
+                "Module.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "ZF2 Module providing structure for RESTful resources",
+        "homepage": "http://apigility.org/",
+        "keywords": [
+            "module",
+            "rest",
             "zend",
             "zf2"
         ]
