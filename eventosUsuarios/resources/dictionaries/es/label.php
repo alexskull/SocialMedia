@@ -4,6 +4,7 @@ class Label {
     const acciones = "Acciones";
     const aceptar = "Aceptar";
     const adjuntar = "Adjuntar";
+    const administradores = "Administradores";
     const alerta = "Alerta";
     const anadir_archivos = "Añadir archivos";
     const años = "Años";
@@ -54,6 +55,7 @@ class Label {
     const donde_vives = "¿Dónde vives?";
     
     const edad = "Edad";
+    const edad_permitida_mayor_a = "La edad permitida debe ser mayor a ";
     const editar = "Editar";
     const editar_entrada = "Editar entrada";
     const editar_evento = "Editar evento";
@@ -65,6 +67,7 @@ class Label {
     const enviar = "Enviar";
     const enviar_correo = "Enviar correo";
     const enviar_correo_participantes = "Enviar correo a participantes";    
+    const error_ocurrido = "¡Ups! Ha ocurrido un error";
     const escriba_aqui = "Escriba aqui lo que desea";
     const es_recurrente = "¿Es recurrente?";
     const estadisticas = "Estadísticas";
@@ -112,6 +115,7 @@ class Label {
     const informacion_personal = "Información personal";
     const inscrito_desde = "Inscrito desde";
     
+    const jefe_equipo = "Jefe de Equipo";
     const jurado = "Jurado";
     
     const leido = "Leído";
@@ -143,19 +147,25 @@ class Label {
     
     const ocultar_menu = "Ocultar menú";
     const organizador = "Organizador";
+    const organizador_eventos = "Organizador de Eventos";
     
-    const pais = "País";
-    const plazas = "Plazas";
+    const pais = "País"; 
+    const pagina_web = "Página Web";
+    const panel_usuarios = "Panel de usuarios";
     const para = "Para";
     const participantes = "Participantes";
+    const perfil = "Perfil";
     const permitir_comentarios = "Permitir comentarios";
+    const plazas = "Plazas";
     const poblacion = "Población";
+    const portada = "Portada";
     const posponer = "Posponer";
     const precio = "Precio";
     const promedio_visitas_diarias = "Promedio de visitas diarias";
     const provincia = "Provincia";
     const proximos_eventos = "Próximos eventos";
     
+    const quitar = "Quitar";
     const recibidos = "Recibidos";
     const redactar = "Redactar";
     const redactar_correo = "Redactar correo";
@@ -164,17 +174,20 @@ class Label {
     const resumen = "Resúmen";
     
     const salidas = "Salidas";
+    const seleccione = "Seleccione";
     const seleccionar = "Seleccionar";
     const seleccionar_todos = "Seleccionar todos";
     const semanas = "Semanas";
     const sexo = "Sexo";
     const signo_moneda = "Bs";
     const sin_leer = "Sin leer";
+    const sin_organizador = "Sin organizador";
     const subcategoria = "Subcategoría";
     const subcategorias = "Subcategorías";
     const suspender = "Suspender";
     
-    const telefono = "Teléfono";
+    const telefono = "Teléfono Casa";
+    const telefono_mobile = "Teléfono Celular";
     const terminos_condiciones = "Términos y Condiciones";
     const tipo_usuario = "Tipo de usuario";
     const titulo = "Título";

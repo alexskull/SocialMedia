@@ -69,7 +69,7 @@ class Upload_handler {
         }
         
         $this->options = array(
-            'script_url' => $this->get_full_url().'/'.basename($this->get_server_var('SCRIPT_NAME')),
+            'script_url' => $this->get_full_url().'/file_upload/',
             'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/uploads/'.$_SESSION["dir"]."/",
             'upload_url' => $this->get_full_url().'/uploads/'.$_SESSION["dir"]."/",
             'user_dirs' => false,

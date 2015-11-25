@@ -137,6 +137,20 @@ var General = {
     calcular_edad: function(date){
         var years = moment().diff(date, 'years');
         return years;
+    },
+    crear_options: function(data, valor, descripcion, seleccione, texto, selected){
+        selected = typeof selected !== 'undefined' ? selected : false;
+        var opciones = seleccione == true ? 
+            General.format("<option value = ''>{0}</option>", texto) : "";
+        for (var i = 0; i < data.length; i++){
+            if(selected !== false){
+                opciones += General.format("<option value = {0} selected>{1}</option>", data[i][valor], data[i][descripcion]);
+            }else{
+                opciones += General.format("<option value = {0}>{1}</option>", data[i][valor], data[i][descripcion]);
+            }
+             
+        }
+        return opciones;
     }
 };
 

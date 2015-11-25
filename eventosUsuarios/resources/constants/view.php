@@ -1,7 +1,8 @@
 <?php
 class View {
-    public $model, $title, $body, $view, $lang, $session, $active, $section_title, $routing, $collapsed, $header, $controller, $root;
-    
+    public $model, $title, $body, $view, $lang, $session, $active, 
+            $section_title, $routing, $collapsed, $header, $controller, $root;
+    private $errors;
     function __construct() {
         $this->root = "";
         $this->model = new stdClass();
@@ -14,6 +15,7 @@ class View {
         $this->collapsed = false;
         $this->header = "";
         $this->controller = "";
+        $this->errors = array(405,500);
     }
     function set_view($obj, $view = null, $model = null){
         $this->view = $view;
@@ -38,18 +40,18 @@ class View {
         else {
             $slashes = count($slashes);
         }
-        if(count($uri)>$slashes+2) $flag = false;  
+        if(count($uri)>$slashes+3) $flag = false;  
         else {            
             $lang = isset($uri[$slashes]) && $uri[$slashes] == "en" ? "en" : "";
-            $slashes += isset($uri[$slashes]) && $uri[$slashes] == "en" ? 1 : 0;            
-            $this->lang = $lang;
+            $slashes += isset($uri[$slashes]) && $uri[$slashes] == "en" ? 1 : 0;      
             $this->root = Settings::WEB_HOST_URL.($lang != "" ? $lang."/" : "");
+            $this->lang = $lang == "" ? "es" : $lang;
             require('./resources/dictionaries/lang.php'); 
             
             $controller = isset($uri[$slashes]) ? $uri[$slashes] : "";
             if ($controller == "") $controller = "principal";
-            if (!file_exists("./controllers/$controller.php")) {
-                return false; 
+            if (!file_exists("./controllers/$controller.php")) { 
+                return  (in_array($controller, $this->errors)) ? $controller : false;
             }
             else {
                 include_once("./controllers/$controller.php");
@@ -74,8 +76,9 @@ class View {
                         if ($id != false) {
                             $explode = explode("?", $id);
                             if (isset($explode)){
-                                $query =  parse_str ($id[1]);
-                                $id = isset($explode[0])? array_merge(array("action" => $id[0]), $query): $query;
+                                if (isset($explode[1]))
+                                    parse_str ($explode[1], $query); 
+                                $id = isset($query)? array_merge(array("action" => $explode[0]), $query): $explode[0];
                                 
                             }
                         }
@@ -104,7 +107,7 @@ class View {
                     return true;
                 }
                 else {
-                    return true;
+                    return $response;
                 }
             }
         }  

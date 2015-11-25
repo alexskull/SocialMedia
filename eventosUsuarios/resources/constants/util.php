@@ -40,22 +40,28 @@ class Util {
             case "POST":
                 curl_setopt($curl, CURLOPT_POST, 1);
 
-                if ($data)
+                if ($data != false)
                     curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
                 break;
             case "PUT":
                 curl_setopt($curl, CURLOPT_PUT, 1);
-                if ($data)
+                if ($data != false)
                     curl_setopt($curl, CURLOPT_PUT, $data);
-                break;
                 break;
             case "GET":
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-                if ($data)
+                if ($data != false)
                     curl_setopt($curl, CURLOPT_RETURNTRANSFER, $data);
                 break;
+            case "PATCH":
+                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PATCH');
+                curl_setopt($curl, CURLOPT_POSTFIELDS,$data);
+                break;
+            case "DELETE":
+                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
+                break;
             default:
-                if ($data)
+                if ($data != false)
                     $url = sprintf("%s?%s", $url, http_build_query($data));
         }
 
@@ -63,9 +69,12 @@ class Util {
         curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
         curl_setopt($curl, CURLOPT_USERPWD, "username:password");
 
-        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_URL, Settings::WEB_SERVICES_URL.$url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array(                                                                          
+            'Content-Type: application/json',                                                                                
+            'Content-Length: ' . strlen($data))                                                                       
+        );  
         $result = curl_exec($curl);
 
         curl_close($curl);

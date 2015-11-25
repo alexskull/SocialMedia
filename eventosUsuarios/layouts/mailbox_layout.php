@@ -1,7 +1,7 @@
 <?php 
 $this->layout = "./layouts/main_layout.php";
 $this->collapsed = true;
-$model = $this->model->Mailbox;
+$model = $this->model->Mailbox->Mailbox;
 $content = function() use ($content_mailbox, $mailbox_view, $model){ ?>
 <section class="content-with-menu mailbox <?= $mailbox_view == "compose" ? "content-with-menu-has-toolbar" : ""?>">
     <div class="content-with-menu-container" data-mailbox data-mailbox-view="<?= $mailbox_view ?>">
@@ -33,10 +33,10 @@ $content = function() use ($content_mailbox, $mailbox_view, $model){ ?>
                         
                         <ul class="list-unstyled mt-xl pt-md">
                             <li>
-                                <a href="<?= Settings::WEB_HOST_URL ?>mailbox/" class="menu-item <?= $model->Mailbox->recibidos ? "active" : "" ?>"><?= Label::recibidos ?> <span class="label label-primary text-weight-normal pull-right">43</span></a>
+                                <a href="<?= Settings::WEB_HOST_URL ?>mailbox/" class="menu-item <?= $model->recibidos ? "active" : "" ?>"><?= Label::recibidos ?> <span class="label label-primary text-weight-normal pull-right">43</span></a>
                             </li>
                             <li>
-                                <a href="<?= Settings::WEB_HOST_URL ?>mailbox/sent" class="menu-item <?= !$model->Mailbox->recibidos ? "active" : "" ?>"><?= Label::enviados ?></a>
+                                <a href="<?= Settings::WEB_HOST_URL ?>mailbox/sent" class="menu-item <?= !$model->recibidos ? "active" : "" ?>"><?= Label::enviados ?></a>
                             </li>
                         </ul>
                         

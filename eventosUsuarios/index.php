@@ -17,7 +17,10 @@ $response   = $view->load_elements($uri);
 $model      = new stdClass();
 
 
-if (!$response) echo Message::pagina_no_encontrada;
+if ($response !== true) {
+    include("./views/error/".($response === false ? 404 : $response).".php" );
+    
+}
 
 
 

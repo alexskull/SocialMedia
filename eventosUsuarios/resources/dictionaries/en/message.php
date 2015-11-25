@@ -33,7 +33,9 @@ class Message {
     const file_upload_max_height = "La imagen excede el alto máximo";
     const file_upload_min_height = "La imagen requiere un alto mínimo";
     const file_upload_abort = "Carga de archivos abortados";
-    const file_upload_image_resize = "La imagen requiere un alto mínimo";
+    const file_upload_image_resize = "La imagen requiere un alto mínimo";    
+    
+    const info_operacion_exitosa = "Operación realizada exitosamente";
     
     const confirmacion_gestionar_sub_categorias = "¿Está seguro que desea eliminar esta subcategoría?";
     const confirmacion_gestionar_blog = "¿Está seguro que desea publicar esta entrada?";

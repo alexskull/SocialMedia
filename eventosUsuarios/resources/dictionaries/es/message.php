@@ -2,6 +2,7 @@
 class Message {
     const alerta_campo_alfanumerico = "Este campo sólo puede contener caracteres alfanuméricos (a-z, A-Z, 0-9).";     
     const alerta_campo_clave = "Este campo sólo admite cácteres alfanuméricos (a-z, A-Z, 0-9) con una longitud mínima de seis (6) caracteres";
+    const alerta_campo_configuracion_obligatorio = "Tiene que introducir lo que desea crear o editar";
     const alerta_campo_correo = "Este campo debe tener un correo electrónico válido";
     const alerta_campo_descuento_obligatorio = "El descuento no puede estar vacío y sólo acepta cantidades con/sin punto decimal, por favor verifique e intente nuevamente.";    
     const alerta_campo_flotantes = "Este campo sólo admite cantidades con o sin punto decimal.";
@@ -13,6 +14,7 @@ class Message {
     const alerta_campo_numeros = "Este campo sólo admite carácteres numéricos.";
     const alerta_campo_obligatorio = "Este campo es obligatorio.";     
     const alerta_campo_repetir_contraseña = "La contraseñas deben ser iguales";
+    const alerta_campo_url = "Introduzca una dirección URL válida";
     const alerta_editar_campo_vacio = "El valor que intenta editar está vacío. Por favor seleccione uno e intente nuevamente";
     const alerta_eliminar_campo_vacio = "El valor que intenta eliminar está vacío. Por favor seleccione uno e intente nuevamente";
     const alerta_gestionar_blog_campos_vacios = "Debe especificar un título y escribir un cuerpo de mensaje para el post que está intentando publicar. Por favor verifique e intente nuevamente";    
@@ -37,6 +39,9 @@ class Message {
     const file_upload_min_height = "La imagen requiere un alto mínimo";
     const file_upload_abort = "Carga de archivos abortados";
     const file_upload_image_resize = "La imagen requiere un alto mínimo";
+    
+    const info_operacion_exitosa = "Operación realizada exitosamente";
+    const info_operacion_fallida = "Operación realizada sin éxito";
     
     const confirmacion_gestionar_localizacion = "¿Está seguro que desea eliminar esta localización?";
     const confirmacion_gestionar_sub_categorias = "¿Está seguro que desea eliminar esta subcategoría?";

@@ -1,9 +1,9 @@
 <?php 
 $this->layout = "./layouts/mailbox_layout.php";
 $this->active = substr_replace($this->active, "1", -2, 1);
-$model = $this->model->Mailbox;
+$model = $this->model->Mailbox->Mailbox;
 $this->section_title = Label::buzon_mensajes;
-$this->routing = array(Label::buzon_mensajes, $model->Mailbox->recibidos ? Label::recibidos : Label::enviados);
+$this->routing = array(Label::buzon_mensajes, $model->recibidos ? Label::recibidos : Label::enviados);
 $mailbox_view = "folder";
 
 $content_mailbox = function() use ($model) { ?>
@@ -22,7 +22,7 @@ $content_mailbox = function() use ($model) { ?>
                         <span class="line line-angle1"></span>
                         <span class="line line-angle2"></span>
                     </a>                            
-                            <?= $model->Mailbox->recibidos ? Label::buzon_mensajes : Label::mensajes_enviados ?>
+                            <?= $model->recibidos ? Label::buzon_mensajes : Label::mensajes_enviados ?>
                 </h1>
             </div>
         </div>

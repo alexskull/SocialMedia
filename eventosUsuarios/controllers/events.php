@@ -1,7 +1,7 @@
 <?php
 
 class Events {
-    public function main(){
+    public function main(){        
         return View("events/main");
     } 
     public function favs(){
