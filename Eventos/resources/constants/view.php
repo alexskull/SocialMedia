@@ -1,11 +1,13 @@
 <?php
 class View {
-    public $model, $title, $body, $view, $lang, $session, $active, $section_title, $routing, $collapsed, $header, $controller;
+    public $model, $title, $body, $view, $lang, $session, $active, 
+            $section_title, $routing, $collapsed, $header, $controller, $root;
     
-    function __construct($lang) {
+    function __construct() {
+        $this->root = "";
         $this->model = new stdClass();
         $this->title = "";
-        $this->lang = $lang;
+        $this->lang = "";
         $this->session = decbin($_SESSION["permisos"]);
         $this->active = str_repeat("0", strlen($this->session));
         $this->section_title = "";
@@ -29,10 +31,23 @@ class View {
     }
     function load_elements($uri){
         $flag   = true;
-
-        if(count($uri)>Settings::URL_SLASHES+2) $flag = false;  
+        
+        $slashes = explode('/', Settings::WEB_HOST_URL);
+        if ($slashes[0] == "http:" || $slashes[0] == "https:"){
+            $slashes = count($slashes) - 3;
+        }
         else {
-            $controller = $uri[Settings::URL_SLASHES];
+            $slashes = count($slashes);
+        }
+        if(count($uri)>$slashes+3) $flag = false;  
+        else {            
+            $lang = isset($uri[$slashes]) && $uri[$slashes] == "en" ? "en" : "";
+            $slashes += isset($uri[$slashes]) && $uri[$slashes] == "en" ? 1 : 0;      
+            $this->root = Settings::WEB_HOST_URL.($lang != "" ? $lang."/" : "");
+            $this->lang = $lang == "" ? "es" : $lang;
+            require('./resources/dictionaries/lang.php'); 
+            
+            $controller = isset($uri[$slashes]) ? $uri[$slashes] : "";
             if ($controller == "") $controller = "principal";
             if (!file_exists("./controllers/$controller.php")) {
                 return false; 
@@ -41,7 +56,7 @@ class View {
                 include_once("./controllers/$controller.php");
                 $controller = ucfirst($controller);
                 $controller_class = new $controller();
-                $action = isset($uri[Settings::URL_SLASHES+1]) ? $uri[Settings::URL_SLASHES+1] : false;
+                $action = isset($uri[$slashes+1]) ? $uri[$slashes+1] : false;
                 
                 $explode = explode('?', $action);
                 $action = $explode[0];
@@ -55,13 +70,14 @@ class View {
                 }
                 else {                   
                     if (method_exists($controller_class, $action)){
-                        $id = isset($uri[Settings::URL_SLASHES+2]) ? $uri[Settings::URL_SLASHES+2] : false;
+                        $id = isset($uri[$slashes+2]) ? $uri[$slashes+2] : false;
                         
                         if ($id != false) {
                             $explode = explode("?", $id);
                             if (isset($explode)){
-                                $query =  parse_str ($id[1]);
-                                $id = isset($explode[0])? array_merge(array("action" => $id[0]), $query): $query;
+                                if (isset($explode[1]))
+                                    parse_str ($explode[1], $query); 
+                                $id = isset($query)? array_merge(array("action" => $explode[0]), $query): $explode[0];
                                 
                             }
                         }

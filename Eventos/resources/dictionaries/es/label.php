@@ -25,6 +25,7 @@ class Label {
     const direccion = "Dirección";
     const direccion_facturacion = "Dirección de Facturación";
     
+    const en = "En";
     const enviar_correo_activacion = "Enviar correo de activación";
     const error = "Error";    
     const español = "Español";
@@ -119,6 +120,7 @@ class Label {
     const selecciona_poblacion = "Selecciona tu población";
     const selecciona_provincia = "Selecciona tu provincia";
     const sexo = "Sexo";
+    const simbolo_moneda = "€";
     const sigueme = "Sígueme";
     const siguiente = "Siguiente";
     
@@ -129,6 +131,7 @@ class Label {
     const tus_datos = "Tus datos";    
     
     const ultimos_eventos = "<span>Últimos</span> eventos";
+    const url = "URL";
     const usuario = "Usuario";
     const usuario_correo = "Usuario ó correo";
     

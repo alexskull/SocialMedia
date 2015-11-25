@@ -13,6 +13,7 @@ class Label {
     const desde = "Desde";
     const detalles = "Detalles";
     
+    const en = "En";
     const enviar_correo_activacion = "Enviar correo de activación";
     const español = "Español";
     const eventos = "Eventos";
