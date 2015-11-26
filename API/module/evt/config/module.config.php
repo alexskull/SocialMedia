@@ -407,6 +407,15 @@ return array(
                     ),
                 ),
             ),
+            'evt.rest.vista-usuarios-muro-galeria' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/vista-usuarios-muro-galeria[/:vista_usuarios_muro_galeria_id]',
+                    'defaults' => array(
+                        'controller' => 'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\Controller',
+                    ),
+                ),
+            ),
         ),
     ),
     'zf-versioning' => array(
@@ -456,6 +465,7 @@ return array(
             43 => 'evt.rest.vista-usuarios-x-tipo',
             44 => 'evt.rest.vista-usuario-subcategorias',
             45 => 'evt.rest.vista-evento',
+            46 => 'evt.rest.vista-usuarios-muro-galeria',
         ),
     ),
     'zf-rest' => array(
@@ -1390,9 +1400,10 @@ return array(
             'entity_http_methods' => array(
                 0 => 'GET',
                 1 => 'DELETE',
-                2 => 'POST',
             ),
-            'collection_http_methods' => array(),
+            'collection_http_methods' => array(
+                0 => 'POST',
+            ),
             'collection_query_whitelist' => array(
                 0 => 'usuarios_id',
             ),
@@ -1410,13 +1421,34 @@ return array(
             'entity_http_methods' => array(
                 0 => 'GET',
             ),
-            'collection_http_methods' => array(),
+            'collection_http_methods' => array(
+                0 => 'GET',
+            ),
             'collection_query_whitelist' => array(),
             'page_size' => 25,
             'page_size_param' => null,
             'entity_class' => 'evt\\V1\\Rest\\VistaEvento\\VistaEventoEntity',
             'collection_class' => 'evt\\V1\\Rest\\VistaEvento\\VistaEventoCollection',
             'service_name' => 'VistaEvento',
+        ),
+        'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\Controller' => array(
+            'listener' => 'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\VistaUsuariosMuroGaleriaResource',
+            'route_name' => 'evt.rest.vista-usuarios-muro-galeria',
+            'route_identifier_name' => 'vista_usuarios_muro_galeria_id',
+            'collection_name' => 'usuarios_muro_galeria',
+            'entity_http_methods' => array(),
+            'collection_http_methods' => array(
+                0 => 'GET',
+            ),
+            'collection_query_whitelist' => array(
+                0 => 'caption',
+                1 => 'usuarios_id',
+            ),
+            'page_size' => 25,
+            'page_size_param' => null,
+            'entity_class' => 'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\VistaUsuariosMuroGaleriaEntity',
+            'collection_class' => 'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\VistaUsuariosMuroGaleriaCollection',
+            'service_name' => 'VistaUsuariosMuroGaleria',
         ),
     ),
     'zf-content-negotiation' => array(
@@ -1466,6 +1498,7 @@ return array(
             'evt\\V1\\Rest\\VistaUsuariosXTipo\\Controller' => 'HalJson',
             'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\Controller' => 'HalJson',
             'evt\\V1\\Rest\\VistaEvento\\Controller' => 'HalJson',
+            'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\Controller' => 'HalJson',
         ),
         'accept_whitelist' => array(
             'evt\\V1\\Rest\\Usuarios\\Controller' => array(
@@ -1693,6 +1726,11 @@ return array(
                 1 => 'application/hal+json',
                 2 => 'application/json',
             ),
+            'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/hal+json',
+                2 => 'application/json',
+            ),
         ),
         'content_type_whitelist' => array(
             'evt\\V1\\Rest\\Usuarios\\Controller' => array(
@@ -1872,6 +1910,10 @@ return array(
                 1 => 'application/json',
             ),
             'evt\\V1\\Rest\\VistaEvento\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/json',
+            ),
+            'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\Controller' => array(
                 0 => 'application/vnd.evt.v1+json',
                 1 => 'application/json',
             ),
@@ -2419,6 +2461,18 @@ return array(
                 'route_identifier_name' => 'vista_evento_id',
                 'is_collection' => true,
             ),
+            'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\VistaUsuariosMuroGaleriaEntity' => array(
+                'entity_identifier_name' => 'caption',
+                'route_name' => 'evt.rest.vista-usuarios-muro-galeria',
+                'route_identifier_name' => 'vista_usuarios_muro_galeria_id',
+                'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
+            ),
+            'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\VistaUsuariosMuroGaleriaCollection' => array(
+                'entity_identifier_name' => 'caption',
+                'route_name' => 'evt.rest.vista-usuarios-muro-galeria',
+                'route_identifier_name' => 'vista_usuarios_muro_galeria_id',
+                'is_collection' => true,
+            ),
         ),
     ),
     'zf-apigility' => array(
@@ -2826,6 +2880,9 @@ return array(
         ),
         'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\Controller' => array(
             'input_filter' => 'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\Validator',
+        ),
+        'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\Controller' => array(
+            'input_filter' => 'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\Validator',
         ),
     ),
     'input_filter_specs' => array(
@@ -3302,25 +3359,12 @@ return array(
                 ),
             ),
             2 => array(
-                'name' => 'deleted',
-                'required' => true,
-                'filters' => array(
-                    0 => array(
-                        'name' => 'Zend\\Filter\\StripTags',
-                    ),
-                    1 => array(
-                        'name' => 'Zend\\Filter\\Digits',
-                    ),
-                ),
-                'validators' => array(),
-            ),
-            3 => array(
                 'name' => 'posteado_en',
                 'required' => true,
                 'filters' => array(),
                 'validators' => array(),
             ),
-            4 => array(
+            3 => array(
                 'required' => true,
                 'validators' => array(
                     0 => array(
@@ -3344,7 +3388,7 @@ return array(
                 ),
                 'name' => 'usuarios_id',
             ),
-            5 => array(
+            4 => array(
                 'required' => true,
                 'validators' => array(
                     0 => array(
@@ -3359,6 +3403,66 @@ return array(
                     ),
                 ),
                 'name' => 'posicion',
+            ),
+            5 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'photo_thumbnail',
+                'description' => 'Foto almacenada en string del thumbnail',
+            ),
+            6 => array(
+                'required' => false,
+                'validators' => array(
+                    0 => array(
+                        'name' => 'Zend\\Validator\\StringLength',
+                        'options' => array(),
+                    ),
+                ),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\StringTrim',
+                        'options' => array(),
+                    ),
+                    1 => array(
+                        'name' => 'Zend\\Filter\\StripTags',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'type',
+                'description' => 'File Type, it can be document, image, video or null.',
+                'continue_if_empty' => true,
+                'allow_empty' => true,
+            ),
+            7 => array(
+                'required' => true,
+                'validators' => array(
+                    0 => array(
+                        'name' => 'Zend\\I18n\\Validator\\IsInt',
+                        'options' => array(),
+                    ),
+                ),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\ToInt',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'size',
+                'description' => 'Tamaño del archivo.',
+            ),
+            8 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\Digits',
+                        'options' => array(),
+                    ),
+                ),
+                'name' => 'deleted',
+                'description' => 'Indica si la foto ha sido moderada (borada logicamente)',
+                'allow_empty' => true,
             ),
         ),
         'evt\\V1\\Rest\\UsuariosBloqueo\\Validator' => array(
@@ -5584,6 +5688,68 @@ return array(
                     ),
                 ),
                 'name' => 'id_sub_categoria',
+            ),
+        ),
+        'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\Validator' => array(
+            0 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'photo_id',
+            ),
+            1 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'usuarios_id',
+            ),
+            2 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'posicion',
+            ),
+            3 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'photo',
+            ),
+            4 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'photo_thumbnail',
+            ),
+            5 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'caption',
+            ),
+            6 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'type',
+            ),
+            7 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'size',
+            ),
+            8 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'deleted',
+            ),
+            9 => array(
+                'required' => true,
+                'validators' => array(),
+                'filters' => array(),
+                'name' => 'posteado_en',
             ),
         ),
     ),
