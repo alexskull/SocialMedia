@@ -1424,7 +1424,13 @@ return array(
             'collection_http_methods' => array(
                 0 => 'GET',
             ),
-            'collection_query_whitelist' => array(),
+            'collection_query_whitelist' => array(
+                0 => 'length',
+                1 => 'start',
+                2 => 'search',
+                3 => 'column',
+                4 => 'dir',
+            ),
             'page_size' => 25,
             'page_size_param' => null,
             'entity_class' => 'evt\\V1\\Rest\\VistaEvento\\VistaEventoEntity',
@@ -5755,5 +5761,25 @@ return array(
     ),
     'service_manager' => array(
         'invokables' => array(),
+    ),
+    'zf-mvc-auth' => array(
+        'authorization' => array(
+            'evt\\V1\\Rest\\VistaEstadoCiudad\\Controller' => array(
+                'collection' => array(
+                    'GET' => false,
+                    'POST' => false,
+                    'PUT' => false,
+                    'PATCH' => false,
+                    'DELETE' => false,
+                ),
+                'entity' => array(
+                    'GET' => false,
+                    'POST' => false,
+                    'PUT' => false,
+                    'PATCH' => false,
+                    'DELETE' => false,
+                ),
+            ),
+        ),
     ),
 );
