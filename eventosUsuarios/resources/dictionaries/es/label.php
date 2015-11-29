@@ -149,7 +149,7 @@ class Label {
     const organizador = "Organizador";
     const organizador_eventos = "Organizador de Eventos";
     
-    const pais = "País"; 
+    const pais = "País";
     const pagina_web = "Página Web";
     const panel_usuarios = "Panel de usuarios";
     const para = "Para";

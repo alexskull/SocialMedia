@@ -33,7 +33,7 @@ $content = function() use ($lang, $model){ ?>
         height: 400px;
     }
 </style>
-    
+
 <section class="content-with-menu content-with-menu-has-toolbar media-gallery">
     <div class="content-with-menu-container">
         <div class="inner-menu-toggle">
@@ -123,7 +123,7 @@ $content = function() use ($lang, $model){ ?>
             <div class="inner-toolbar clearfix">
                 <ul>
                     <li>
-                        <button type="button" class="btn btn-primary" id="button_guardar_evento"><i class="fa fa-save m-none"></i> <?= Label::guardar ?></button> 
+                        <button type="button" class="btn btn-primary" id="button_guardar_evento"><i class="fa fa-save m-none"></i> <?= Label::guardar ?></button>
                     </li>
                     <li class="right">
                         <ul class="nav nav-pills nav-pills-primary">
@@ -152,8 +152,8 @@ $content = function() use ($lang, $model){ ?>
                             <div class="row">
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <input type="text" name="titulo_evento" id="input-titulo_evento" class="form-control" 
-                                               placeholder="<?= Label::titulo_evento ?>" 
+                                        <input type="text" name="titulo_evento" id="input-titulo_evento" class="form-control"
+                                               placeholder="<?= Label::titulo_evento ?>"
                                                style = "font-size: 20px; text-align: center"
                                                data-msg-required = "<?= Message::alerta_campo_obligatorio ?>"  required/>
                                     </div>
@@ -169,16 +169,16 @@ $content = function() use ($lang, $model){ ?>
                                                 <option value = 3><?= Label::competiciones ?></option>
                                             </select>
                                         </div>
-                                    </div>     
+                                    </div>
                                     <div class="form-group col-sm-6">
                                         <label class="col-md-3 control-label"><?= Label::subcategoria ?></label>
                                         <div class="col-md-9">
-                                            <select id = "select-sub_categorias"  data-plugin-selectTwo data-plugin-options='{ "placeholder": "<?= Label::seleccione ?>...", "allowClear": true, "language": "<?= $lang ?>" }' 
+                                            <select id = "select-sub_categorias"  data-plugin-selectTwo data-plugin-options='{ "placeholder": "<?= Label::seleccione ?>...", "allowClear": true, "language": "<?= $lang ?>" }'
                                                     class="form-control populate" name = "subcategoria">
                                                 <option value = ""><?= Label::seleccione ?>...</option>
                                             </select>
                                         </div>
-                                    </div> 
+                                    </div>
                                 </div>
                                 <div class ="row">
                                     <div class="form-group col-sm-6">
@@ -188,12 +188,12 @@ $content = function() use ($lang, $model){ ?>
                                                 <span class="input-group-addon">
                                                     <i class="fa fa-calendar"></i>
                                                 </span>
-                                                <input type="text" name ="fecha" id="input-fecha" data-plugin-masked-input="" 
+                                                <input type="text" name ="fecha" id="input-fecha" data-plugin-masked-input=""
                                                        data-input-mask="99/99/9999" data-plugin-datepicker class="form-control" data-plugin-options = '{ "language": "<?= $lang ?>" }'
                                                        data-msg-required = "<?= Message::alerta_campo_obligatorio ?>"   required>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="form-group col-sm-6">
                                         <label class="col-md-3 control-label"><?= Label::hora ?></label>
                                         <div class="col-md-9 ">
@@ -201,9 +201,9 @@ $content = function() use ($lang, $model){ ?>
                                                 <span class="input-group-addon">
                                                     <i class="fa fa-clock-o"></i>
                                                 </span>
-                                                <input id = "input-hora" type="text" name ="hora"data-plugin-timepicker class="form-control" 
+                                                <input id = "input-hora" type="text" name ="hora"data-plugin-timepicker class="form-control"
                                                        data-plugin-masked-input="" data-input-mask="99:99" data-plugin-options='{ "minuteStep": 1, "showMeridian": false }'
-                                                       data-msg-required = "<?= Message::alerta_campo_obligatorio ?>"   required> 
+                                                       data-msg-required = "<?= Message::alerta_campo_obligatorio ?>"   required>
                                             </div>
                                         </div>
                                     </div>
@@ -216,12 +216,12 @@ $content = function() use ($lang, $model){ ?>
                                                 <span class="input-group-addon">
                                                     <i class="fa fa-calendar"></i>
                                                 </span>
-                                                <input type="text" name = "fecha_fin_registro" id="input-fecha_fin_registro" 
+                                                <input type="text" name = "fecha_fin_registro" id="input-fecha_fin_registro"
                                                        data-plugin-masked-input="" data-input-mask="99/99/9999" data-plugin-datepicker class="form-control" data-plugin-options = '{ "language": "<?= $lang ?>" }'
                                                        data-msg-required = "<?= Message::alerta_campo_obligatorio ?>"   required>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="form-group col-sm-6">
                                         <label class="col-md-3 control-label"><?= Label::hora_tope ?></label>
                                         <div class="col-md-9 ">
@@ -229,13 +229,13 @@ $content = function() use ($lang, $model){ ?>
                                                 <span class="input-group-addon">
                                                     <i class="fa fa-clock-o"></i>
                                                 </span>
-                                                <input id = "input-hora_fin_registro" type="text" name = "fin_registro_hora" data-plugin-masked-input="" 
-                                                       data-input-mask="99:99" data-plugin-timepicker class="form-control" data-plugin-options='{ "minuteStep": 1, "showMeridian": false }'> 
+                                                <input id = "input-hora_fin_registro" type="text" name = "fin_registro_hora" data-plugin-masked-input=""
+                                                       data-input-mask="99:99" data-plugin-timepicker class="form-control" data-plugin-options='{ "minuteStep": 1, "showMeridian": false }'>
                                             </div>
                                         </div>
                                     </div>
-                                </div>   
-                                <div class ="row">                                    
+                                </div>
+                                <div class ="row">
                                     <div class="form-group col-sm-6">
                                         <label class="col-md-3"></label>
                                         <div class="col-md-5">
@@ -243,15 +243,15 @@ $content = function() use ($lang, $model){ ?>
                                                 <input type="checkbox" id="checkbox-recurrencia">
                                                 <label for="checkbox-recurrencia"><?= Label::es_recurrente ?></label>
                                             </div>
-                                        </div>            
+                                        </div>
                                     </div>
                                     <div class="form-group col-sm-6"></div>
                                 </div>
-                                <div class ="row">                                    
+                                <div class ="row">
                                     <div class="form-group col-sm-6">
                                         <label class="col-md-3 control-label"><?= Label::cada ?></label>
                                         <div class="col-md-4 ">
-                                            <input type ="number" name="recurrencia_cantidad"  id="input-recurrencia" class = "form-control" min = "1" 
+                                            <input type ="number" name="recurrencia_cantidad"  id="input-recurrencia" class = "form-control" min = "1"
                                                    required disabled data-msg-required = "<?= Message::alerta_campo_obligatorio ?>">
                                         </div>
                                         <div class="col-md-5 ">
@@ -261,9 +261,9 @@ $content = function() use ($lang, $model){ ?>
                                                 <option value = "M"><?= Label::meses ?></option>
                                             </select>
                                         </div>
-                                    </div>  
+                                    </div>
                                     <div class="form-group col-sm-6"></div>
-                                </div>     
+                                </div>
                                 <div class ="row">
                                     <div class="form-group col-sm-6">
                                         <label class="col-md-3 control-label"><?= Label::desde ?></label>
@@ -272,13 +272,13 @@ $content = function() use ($lang, $model){ ?>
                                                 <span class="input-group-addon">
                                                     <i class="fa fa-calendar"></i>
                                                 </span>
-                                                <input type="text" name= "recurrencia_desde"  id ="input-recurrencia_desde"  
-                                                       data-plugin-masked-input="" data-input-mask="99/99/9999" 
+                                                <input type="text" name= "recurrencia_desde"  id ="input-recurrencia_desde"
+                                                       data-plugin-masked-input="" data-input-mask="99/99/9999"
                                                        data-msg-required = "<?= Message::alerta_campo_obligatorio ?>"   required
                                                        data-plugin-datepicker class="form-control" data-plugin-options = '{ "language": "<?= $lang ?>" }' disabled>
-                                            </div>                                        
+                                            </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="form-group col-sm-6">
                                         <label class="col-md-3 control-label"><?= Label::hasta ?></label>
                                         <div class="col-md-9 ">
@@ -286,14 +286,14 @@ $content = function() use ($lang, $model){ ?>
                                                 <span class="input-group-addon">
                                                     <i class="fa fa-calendar"></i>
                                                 </span>
-                                                <input type="text" name= "recurrencia_hasta"  id ="input-recurrencia_hasta" 
-                                                       data-plugin-masked-input="" data-input-mask="99/99/9999" 
+                                                <input type="text" name= "recurrencia_hasta"  id ="input-recurrencia_hasta"
+                                                       data-plugin-masked-input="" data-input-mask="99/99/9999"
                                                        data-msg-required = "<?= Message::alerta_campo_obligatorio ?>"   required
                                                        data-plugin-datepicker class="form-control" data-plugin-options = '{ "language": "<?= $lang ?>" }' disabled>
                                             </div>
                                         </div>
-                                    </div> 
-                                </div>  
+                                    </div>
+                                </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label class="control-label"><?= Label::pagina_web ?></label>
@@ -314,52 +314,52 @@ $content = function() use ($lang, $model){ ?>
                                             <div class="radio-custom radio-primary" style = "display:inline">
                                                 <input id="radio-url" name="ubicacion" type="radio" value="false" >
                                                 <label for="m"><?= Label::url ?></label>
-                                            </div>            
+                                            </div>
                                             <label class="error" for="porto_is"></label>
-                                        </div>       
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="control-label"><?= Label::pais ?></label>
                                         <div>
-                                            <select id = "select-pais" class="form-control populate localizaciones" name = "pais" 
-                                                    data-plugin-selectTwo data-plugin-options='{ "placeholder": "<?= Label::seleccione ?>...", "allowClear": true, "language": "<?= $lang ?>" }' 
+                                            <select id = "select-pais" class="form-control populate localizaciones" name = "pais"
+                                                    data-plugin-selectTwo data-plugin-options='{ "placeholder": "<?= Label::seleccione ?>...", "allowClear": true, "language": "<?= $lang ?>" }'
                                                     data-msg-required = "<?= Message::alerta_campo_obligatorio ?>"   required>
                                                 <option value = ""><?= Label::seleccione ?>...</option>
                                             </select>
                                         </div>
-                                    </div><br> 
-                                </div>      
+                                    </div><br>
+                                </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="control-label"><?= Label::provincia ?></label>
                                         <div>
-                                            <select id = "select-estado" class="form-control populate localizaciones" name = "estado" 
-                                                    data-plugin-selectTwo data-plugin-options='{ "placeholder": "<?= Label::seleccione ?>...", "allowClear": true, "language": "<?= $lang ?>" }' 
+                                            <select id = "select-estado" class="form-control populate localizaciones" name = "estado"
+                                                    data-plugin-selectTwo data-plugin-options='{ "placeholder": "<?= Label::seleccione ?>...", "allowClear": true, "language": "<?= $lang ?>" }'
                                                     data-msg-required = "<?= Message::alerta_campo_obligatorio ?>"   required disabled>
                                                 <option value = ""><?= Label::seleccione ?>...</option>
                                             </select>
                                         </div>
-                                    </div><br>    
-                                </div>      
+                                    </div><br>
+                                </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="control-label"><?= Label::poblacion ?></label>
                                         <div>
-                                            <select id = "select-ciudad" class="form-control populate localizaciones" name = "ciudad" 
-                                                    data-plugin-selectTwo data-plugin-options='{ "placeholder": "<?= Label::seleccione ?>...", "allowClear": true, "language": "<?= $lang ?>" }' 
+                                            <select id = "select-ciudad" class="form-control populate localizaciones" name = "ciudad"
+                                                    data-plugin-selectTwo data-plugin-options='{ "placeholder": "<?= Label::seleccione ?>...", "allowClear": true, "language": "<?= $lang ?>" }'
                                                     data-msg-required = "<?= Message::alerta_campo_obligatorio ?>"   required disabled>
                                                 <option value = ""><?= Label::seleccione ?>...</option>
                                             </select>
                                         </div>
-                                    </div><br>    
-                                </div>                                 
+                                    </div><br>
+                                </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label class="control-label"><?= Label::direccion_url ?></label>
                                         <div class="">
-                                            <input id="input-direccion" type="text" name="direccion_url" class="form-control" placeholder="<?= Label::direccion_url ?>" 
+                                            <input id="input-direccion" type="text" name="direccion_url" class="form-control" placeholder="<?= Label::direccion_url ?>"
                                                    data-msg-required = "<?= Message::alerta_campo_obligatorio ?>"   required/>
                                         </div>
                                     </div>
@@ -368,10 +368,10 @@ $content = function() use ($lang, $model){ ?>
                                     <div class="form-group">
                                         <label class="control-label"><?= Label::lugar_encuentro ?></label>
                                         <div class="">
-                                            <input id="input-encuentro" type="text" name="lugar_encuentro" class="form-control" placeholder="<?= Label::lugar_encuentro ?>" 
+                                            <input id="input-encuentro" type="text" name="lugar_encuentro" class="form-control" placeholder="<?= Label::lugar_encuentro ?>"
                                                    data-msg-required = "<?= Message::alerta_campo_obligatorio ?>"   required/>
                                         </div>
-                                    </div> 
+                                    </div>
                                 </div><br>
                                 <div class="form-group">
                                     <div class="col-sm-12">
@@ -382,7 +382,7 @@ $content = function() use ($lang, $model){ ?>
                                     <div class="form-group col-sm-6">
                                         <label class="col-md-3 control-label"><?= Label::plazas ?></label>
                                         <div class="col-md-6">
-                                            <input type ="number" id="input-plazas" name = "plazas" class = "form-control" min = "1" data-msg-required = "<?= Message::alerta_campo_obligatorio ?>" required>              
+                                            <input type ="number" id="input-plazas" name = "plazas" class = "form-control" min = "1" data-msg-required = "<?= Message::alerta_campo_obligatorio ?>" required>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="checkbox-custom checkbox-default" style ="display:inline-block; line-height: 36px;">
@@ -390,25 +390,25 @@ $content = function() use ($lang, $model){ ?>
                                                 <label for="checkbox-plazas_ilimitadas"><?= Label::ilimitadas ?></label>
                                             </div>
                                         </div>
-                                    </div>  
+                                    </div>
                                     <div class="form-group col-sm-6">
                                         <label class="col-md-3 control-label"><b><?= Label::precio ?></b></label>
                                         <div class="col-md-6">
                                             <input type ="text" name="precio" id="input-precio" class = "form-control" pattern = "[0-9]*\.?[0-9]+$"
                                                    data-msg-pattern = "<?= Message::alerta_campo_flotantes ?>"
-                                                   data-msg-required = "<?= Message::alerta_campo_obligatorio ?>" required> 
+                                                   data-msg-required = "<?= Message::alerta_campo_obligatorio ?>" required>
                                         </div>
-                                        <div class="col-md-3">          
+                                        <div class="col-md-3">
                                             <label style ="line-height: 36px;"><?= Label::signo_moneda ?></label>
                                         </div>
-                                    </div>  
+                                    </div>
                                 </div>
                                 <div class ="row">
                                     <div class="form-group col-sm-6">
                                         <label class="col-md-3 control-label"><?= Label::organizador ?></label>
                                         <div class="col-md-6">
                                             <select id = "select-organizador" name = "organizador" class="form-control populate" required
-                                                    data-msg-required = "<?= Message::alerta_campo_obligatorio ?>" 
+                                                    data-msg-required = "<?= Message::alerta_campo_obligatorio ?>"
                                                     data-plugin-selectTwo data-plugin-options='{ "placeholder": "<?= Label::seleccione ?>...", "allowClear": true, "language": "<?= $lang ?>" }' >
                                                 <option value = ""><?= Label::seleccione ?>...</option>
                                             </select>
@@ -419,18 +419,18 @@ $content = function() use ($lang, $model){ ?>
                                                 <label for="checkbox-sin_organizador"><?= Label::sin_organizador ?></label>
                                             </div>
                                         </div>
-                                    </div>  
+                                    </div>
                                     <div class="form-group col-sm-6">
                                         <label class="col-md-3 control-label"><?= Label::jurado ?></label>
                                         <div class="col-md-9">
-                                            <input type ="text" name="jurado" id="input-jurado" class = "form-control" data-msg-required = "<?= Message::alerta_campo_obligatorio ?>" required disabled> 
+                                            <input type ="text" name="jurado" id="input-jurado" class = "form-control" data-msg-required = "<?= Message::alerta_campo_obligatorio ?>" required disabled>
                                         </div>
-                                    </div>  
+                                    </div>
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?= Label::resumen ?></label>
-                                    <textarea name="resumen" id="textarea-resumen" class = "form-control" data-msg-required = "<?= Message::alerta_campo_obligatorio ?>" required></textarea> 
-                                        
+                                    <textarea name="resumen" id="textarea-resumen" class = "form-control" data-msg-required = "<?= Message::alerta_campo_obligatorio ?>" required></textarea>
+
                                 </div> 
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?= Label::descripcion ?></label>

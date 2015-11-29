@@ -3,7 +3,8 @@ $this->layout = "./layouts/main_layout.php";
 $this->section_title = Label::listado_eventos;
 $this->routing = array(Label::gestionar_eventos, Label::listado);
 $this->active = substr_replace($this->active, "1", -11, 1);
-$content = function(){ ?>
+$lang = $this->lang;
+$content = function() use ($lang){ ?>
 <link href="<?= Settings::WEB_HOST_URL ?>assets/vendor/jquery-datatables/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
 <link href="<?= Settings::WEB_HOST_URL ?>assets/vendor/jquery-datatables/media/css/responsive.dataTables.css" rel="stylesheet" type="text/css"/>
 <script src="<?= Settings::WEB_HOST_URL ?>assets/vendor/jquery-datatables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
@@ -11,7 +12,7 @@ $content = function(){ ?>
 <script src="<?= Settings::WEB_HOST_URL ?>assets/javascripts/underscore-min.js" type="text/javascript"></script>
 <script>
     $(function(){
-        /*var datatable = 
+        var datatable = 
         $(".table").on('xhr.dt', function (e, settings, json, xhr) {
         }).DataTable({
             responsive: true,
@@ -23,16 +24,16 @@ $content = function(){ ?>
             autoWidth: false,
             deferRender: true,
             sortClasses: false,
-            info: false,
+            /*info: false,
             searching: false,
-            lengthChange: false,
+            lengthChange: false,*/
             stateSave: false,
             processing: true,
-            serverSide: false,
-            columnDefs: [
+            serverSide: true,
+            /*columnDefs: [
                 { class: "all", targets: [0, 1] },
                 { class: "none", targets: [2, 3, 4] },
-            ],
+            ],*/
             columns: [
                 { data: "fila" },
                 { data: "nombres" },
@@ -44,10 +45,10 @@ $content = function(){ ?>
                 $(row).addClass("group-item");
             },
             ajax: {
-                url: "<?= Settings::WEB_HOST_URL ?>manage_users/get_list",
+                url: "<?= Settings::WEB_HOST_URL ?>manage_events/obtener_listado",
                 type: "POST",
             }
-        }); */
+        }); 
     });
     var main = {
     }
@@ -69,7 +70,7 @@ $content = function(){ ?>
                     <th style = "width: 15%"><?= Label::factura ?></th>
                 </tr>
             </thead>
-            <tbody>
+            <!--<tbody>
                 <tr>
                     <td></td>
                     <td></td>
@@ -88,7 +89,7 @@ $content = function(){ ?>
                         <?= Tables::button("calendar-times-o", "pomegranate", null, "cancelar", Label::cancelar) ?>
                     </td>
                 </tr>
-            </tbody>
+            </tbody>-->
         </table>
     </div>
 </section>

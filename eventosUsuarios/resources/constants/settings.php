@@ -1,6 +1,6 @@
 <?php
 class Settings {
-    const WEB_HOST_URL = "http://localhost/EventosUsuarios/";  
+    const WEB_HOST_URL = "http://localhost/eventosUsuarios/";
     const WEB_SERVICES_URL = "http://evtapi.startup-xpress.com/";  
     const SERVER_TIMEZONE = "America/Caracas";
     const SESSION_TIMEOUT = 1800;

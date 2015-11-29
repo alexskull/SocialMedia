@@ -1,6 +1,7 @@
 <?php 
 $this->layout = "./layouts/main_layout.php";
 $this->section_title = Label::favoritos;
+$this->title = 'Usuarios';
 $this->active = substr_replace($this->active, "1", -5, 1);
 $lang = $this->lang;
 $this->routing = array(Label::usuario, Label::favoritos);

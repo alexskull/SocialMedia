@@ -1,9 +1,12 @@
 <?php 
 $this->layout = "./layouts/main_layout.php";
 $this->section_title = Label::galeria_imagenes;
+$this->title = 'Usuarios';
 $this->collapsed = true;
 $this->routing = array(Label::usuario, Label::galeria);
 $this->active = substr_replace($this->active, "1", -4, 1);
+$this->data = $this->model->Account->Account->gallery;
+
 $content = function(){ ?>
 <script src="<?= Settings::WEB_HOST_URL ?>assets/vendor/isotope/isotope.js" type="text/javascript"></script>
 <script src="<?= Settings::WEB_HOST_URL ?>assets/javascripts/pages/examples.mediagallery.js" type="text/javascript"></script>
@@ -104,7 +107,6 @@ $content = function(){ ?>
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </menu>
@@ -142,11 +144,14 @@ $content = function(){ ?>
                 </ul>
             </div>
             <div class="row mg-files" data-sort-destination data-sort-id="media-gallery">
-                <div class="isotope-item document col-sm-6 col-md-4 col-lg-3">
+                <?php
+                if(!empty($this->data))
+                    foreach($this->data as $img){?>
+                <div class="isotope-item image col-sm-6 col-md-4 col-lg-3">
                     <div class="thumbnail">
                         <div class="thumb-preview">
-                            <a class="thumb-image" href="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-1.jpg">
-                                <img src="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-1.jpg" class="img-responsive" alt="Project">
+                            <a class="thumb-image" href="<?= $img['photo'] ?>">
+                                <img src="<?= $img['photo'] ?>" class="img-responsive" alt="Project">
                             </a>
                             <div class="mg-thumb-options">
                                 <div class="mg-zoom"><i class="fa fa-search"></i></div>
@@ -167,205 +172,12 @@ $content = function(){ ?>
                                 </div>
                             </div>
                         </div>
-                        <h5 class="mg-title text-weight-semibold">SEO<small>.png</small></h5>
+                        <h5 class="mg-title text-weight-semibold"><?= $img['caption'] ?></h5>
                     </div>
                 </div>
-                <div class="isotope-item col-sm-6 col-md-4 col-lg-3">
-                    <div class="thumbnail">
-                        <div class="thumb-preview">
-                            <a class="thumb-image" href="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-2.jpg">
-                                <img src="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-2.jpg" class="img-responsive" alt="Project">
-                            </a>
-                            <div class="mg-thumb-options">
-                                <div class="mg-zoom"><i class="fa fa-search"></i></div>
-                                <div class="mg-toolbar">
-                                    <div class="mg-option checkbox-custom checkbox-inline">
-                                        <input type="checkbox" id="file_2" value="1">
-                                        <label for="file_2"><?= Label::seleccionar ?></label>
-                                    </div>
-                                    <div class="mg-group pull-right">
-                                        <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
-                                            <i class="fa fa-caret-up"></i>
-                                        </button>
-                                        <ul class="dropdown-menu mg-menu" role="menu">
-                                            <li><a href="#"><i class="fa fa-download"></i> <?= Label::descargar ?></a></li>
-                                            <li><a href="#"><i class="fa fa-trash-o"></i> <?= Label::eliminar ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h5 class="mg-title text-weight-semibold">Blog<small>.png</small></h5>
-                    </div>
-                </div>
-                <div class="isotope-item video col-sm-6 col-md-4 col-lg-3">
-                    <div class="thumbnail">
-                        <div class="thumb-preview">
-                            <a class="thumb-image" href="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-5.jpg">
-                                <img src="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-5.jpg" class="img-responsive" alt="Project">
-                            </a>
-                            <div class="mg-thumb-options">
-                                <div class="mg-zoom"><i class="fa fa-search"></i></div>
-                                <div class="mg-toolbar">
-                                    <div class="mg-option checkbox-custom checkbox-inline">
-                                        <input type="checkbox" id="file_3" value="1">
-                                        <label for="file_3"><?= Label::seleccionar ?></label>
-                                    </div>
-                                    <div class="mg-group pull-right">
-                                        <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
-                                            <i class="fa fa-caret-up"></i>
-                                        </button>
-                                        <ul class="dropdown-menu mg-menu" role="menu">
-                                            <li><a href="#"><i class="fa fa-download"></i> <?= Label::descargar ?></a></li>
-                                            <li><a href="#"><i class="fa fa-trash-o"></i> <?= Label::eliminar ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h5 class="mg-title text-weight-semibold">Friends<small>.png</small></h5>
-                    </div>
-                </div>
-                <div class="isotope-item image col-sm-6 col-md-4 col-lg-3">
-                    <div class="thumbnail">
-                        <div class="thumb-preview">
-                            <a class="thumb-image" href="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-4.jpg">
-                                <img src="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-4.jpg" class="img-responsive" alt="Project">
-                            </a>
-                            <div class="mg-thumb-options">
-                                <div class="mg-zoom"><i class="fa fa-search"></i></div>
-                                <div class="mg-toolbar">
-                                    <div class="mg-option checkbox-custom checkbox-inline">
-                                        <input type="checkbox" id="file_4" value="1">
-                                        <label for="file_4"><?= Label::seleccionar ?></label>
-                                    </div>
-                                    <div class="mg-group pull-right">
-                                        <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
-                                            <i class="fa fa-caret-up"></i>
-                                        </button>
-                                        <ul class="dropdown-menu mg-menu" role="menu">
-                                            <li><a href="#"><i class="fa fa-download"></i> <?= Label::descargar ?></a></li>
-                                            <li><a href="#"><i class="fa fa-trash-o"></i> <?= Label::eliminar ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h5 class="mg-title text-weight-semibold">Life<small>.png</small></h5>
-                    </div>
-                </div>
-                <div class="isotope-item video col-sm-6 col-md-4 col-lg-3">
-                    <div class="thumbnail">
-                        <div class="thumb-preview">
-                            <a class="thumb-image" href="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-5.jpg">
-                                <img src="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-5.jpg" class="img-responsive" alt="Project">
-                            </a>
-                            <div class="mg-thumb-options">
-                                <div class="mg-zoom"><i class="fa fa-search"></i></div>
-                                <div class="mg-toolbar">
-                                    <div class="mg-option checkbox-custom checkbox-inline">
-                                        <input type="checkbox" id="file_5" value="1">
-                                        <label for="file_5"><?= Label::seleccionar ?></label>
-                                    </div>
-                                    <div class="mg-group pull-right">
-                                        <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
-                                            <i class="fa fa-caret-up"></i>
-                                        </button>
-                                        <ul class="dropdown-menu mg-menu" role="menu">
-                                            <li><a href="#"><i class="fa fa-download"></i> <?= Label::descargar ?></a></li>
-                                            <li><a href="#"><i class="fa fa-trash-o"></i> <?= Label::eliminar ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h5 class="mg-title text-weight-semibold">Poetry<small>.png</small></h5>
-                    </div>
-                </div>
-                <div class="isotope-item document col-sm-6 col-md-4 col-lg-3">
-                    <div class="thumbnail">
-                        <div class="thumb-preview">
-                            <a class="thumb-image" href="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-6.jpg">
-                                <img src="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-6.jpg" class="img-responsive" alt="Project">
-                            </a>
-                            <div class="mg-thumb-options">
-                                <div class="mg-zoom"><i class="fa fa-search"></i></div>
-                                <div class="mg-toolbar">
-                                    <div class="mg-option checkbox-custom checkbox-inline">
-                                        <input type="checkbox" id="file_6" value="1">
-                                        <label for="file_6"><?= Label::seleccionar ?></label>
-                                    </div>
-                                    <div class="mg-group pull-right">
-                                        <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
-                                            <i class="fa fa-caret-up"></i>
-                                        </button>
-                                        <ul class="dropdown-menu mg-menu" role="menu">
-                                            <li><a href="#"><i class="fa fa-download"></i> <?= Label::descargar ?></a></li>
-                                            <li><a href="#"><i class="fa fa-trash-o"></i> <?= Label::eliminar ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h5 class="mg-title text-weight-semibold">Fun<small>.png</small></h5>
-                    </div>
-                </div>
-                <div class="isotope-item col-sm-6 col-md-4 col-lg-3">
-                    <div class="thumbnail">
-                        <div class="thumb-preview">
-                            <a class="thumb-image" href="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-7.jpg">
-                                <img src="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-7.jpg" class="img-responsive" alt="Project">
-                            </a>
-                            <div class="mg-thumb-options">
-                                <div class="mg-zoom"><i class="fa fa-search"></i></div>
-                                <div class="mg-toolbar">
-                                    <div class="mg-option checkbox-custom checkbox-inline">
-                                        <input type="checkbox" id="file_7" value="1">
-                                        <label for="file_7"><?= Label::seleccionar ?></label>
-                                    </div>
-                                    <div class="mg-group pull-right">
-                                        <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
-                                            <i class="fa fa-caret-up"></i>
-                                        </button>
-                                        <ul class="dropdown-menu mg-menu" role="menu">
-                                            <li><a href="#"><i class="fa fa-download"></i> <?= Label::descargar ?></a></li>
-                                            <li><a href="#"><i class="fa fa-trash-o"></i> <?= Label::eliminar ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h5 class="mg-title text-weight-semibold">Family<small>.png</small></h5>
-                    </div>
-                </div>
-                <div class="isotope-item image col-sm-6 col-md-4 col-lg-3">
-                    <div class="thumbnail">
-                        <div class="thumb-preview">
-                            <a class="thumb-image" href="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-1.jpg">
-                                <img src="<?= Settings::WEB_HOST_URL ?>assets/images/projects/project-1.jpg" class="img-responsive" alt="Project">
-                            </a>
-                            <div class="mg-thumb-options">
-                                <div class="mg-zoom"><i class="fa fa-search"></i></div>
-                                <div class="mg-toolbar">
-                                    <div class="mg-option checkbox-custom checkbox-inline">
-                                        <input type="checkbox" id="file_8" value="1">
-                                        <label for="file_8"><?= Label::seleccionar ?></label>
-                                    </div>
-                                    <div class="mg-group pull-right">
-                                        <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
-                                            <i class="fa fa-caret-up"></i>
-                                        </button>
-                                        <ul class="dropdown-menu mg-menu" role="menu">
-                                            <li><a href="#"><i class="fa fa-download"></i> <?= Label::descargar ?></a></li>
-                                            <li><a href="#"><i class="fa fa-trash-o"></i> <?= Label::eliminar ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h5 class="mg-title text-weight-semibold">Hapiness<small>.png</small></h5>
-                    </div>
-                </div>
+                <?php
+                    }
+                ?>
             </div>
         </div>
     </div>

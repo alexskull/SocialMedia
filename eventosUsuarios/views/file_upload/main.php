@@ -29,8 +29,7 @@
         </style>
         <script>
             var isOnGitHub = window.location.hostname === 'blueimp.github.io',
-            url = isOnGitHub ? '//jquery-file-upload.appspot.com/' : '<?= Settings::WEB_HOST_URL ?>file_upload/<?= 
-        $this->controller ?>';
+            url = isOnGitHub ? '//jquery-file-upload.appspot.com/' : '<?= Settings::WEB_HOST_URL ?>file_upload/<?= $this->controller ?>';
         </script>
     </head>
     <body>

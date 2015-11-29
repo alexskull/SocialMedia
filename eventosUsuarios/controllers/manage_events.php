@@ -78,4 +78,13 @@ class manage_events {
             return $funcion->editar_evento($id,$data);             
         }
     }
+    public function obtener_listado(){
+        if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+        $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' && isset($_POST)){
+            include_once("functions/manage_events/edit.php");
+            $data = $_POST;
+            $funcion = new Edit();
+            return $funcion->obtener_listado($data);        
+        }
+    }
 }

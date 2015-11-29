@@ -170,8 +170,9 @@ class Label {
     const subcategoria = "Subcategoría";
     const subcategorias = "Subcategorías";
     const suspender = "Suspender";
-    
-    const telefono = "Teléfono";
+
+    const telefono = "Teléfono Casa";
+    const telefono_mobile = "Teléfono Celular";
     const terminos_condiciones = "Términos y Condiciones";
     const tipo_usuario = "Tipo de usuario";
     const titulo = "Título";

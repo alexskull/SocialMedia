@@ -36,6 +36,7 @@ class Message {
     const file_upload_image_resize = "La imagen requiere un alto mínimo";    
     
     const info_operacion_exitosa = "Operación realizada exitosamente";
+    const info_operacion_fallida = "Operación realizada sin éxito";
     
     const confirmacion_gestionar_sub_categorias = "¿Está seguro que desea eliminar esta subcategoría?";
     const confirmacion_gestionar_blog = "¿Está seguro que desea publicar esta entrada?";
