@@ -89,7 +89,15 @@ class Module implements ApigilityProviderInterface
                 'evt\V1\Rest\VistaUsuariosMuroGaleria\VistaUsuariosMuroGaleriaResource' => function ($sm) {
                     $mapper = $sm->get('evt\V1\Rest\VistaUsuariosMuroGaleria\VistaUsuariosMuroGaleriaMapper');
                     return new \evt\V1\Rest\VistaUsuariosMuroGaleria\VistaUsuariosMuroGaleriaResource($mapper);
-                },            
+                },   
+                'evt\V1\Rest\VistaEventosBusqueda\VistaEventosBusquedaMapper' =>  function ($sm) {
+                    $adapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    return new \evt\V1\Rest\VistaEventosBusqueda\VistaEventosBusquedaMapper($adapter);
+                },
+                'evt\V1\Rest\VistaEventosBusqueda\VistaEventosBusquedaResource' => function ($sm) {
+                    $mapper = $sm->get('evt\V1\Rest\VistaEventosBusqueda\VistaEventosBusquedaMapper');
+                    return new \evt\V1\Rest\VistaEventosBusqueda\VistaEventosBusquedaResource($mapper);
+                },           
             ),
         );
     }

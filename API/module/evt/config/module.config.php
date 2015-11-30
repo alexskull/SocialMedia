@@ -416,6 +416,15 @@ return array(
                     ),
                 ),
             ),
+            'evt.rest.vista-eventos-busqueda' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/vista-eventos-busqueda[/:vista_eventos_busqueda_id]',
+                    'defaults' => array(
+                        'controller' => 'evt\\V1\\Rest\\VistaEventosBusqueda\\Controller',
+                    ),
+                ),
+            ),
         ),
     ),
     'zf-versioning' => array(
@@ -466,6 +475,7 @@ return array(
             44 => 'evt.rest.vista-usuario-subcategorias',
             45 => 'evt.rest.vista-evento',
             46 => 'evt.rest.vista-usuarios-muro-galeria',
+            47 => 'evt.rest.vista-eventos-busqueda',
         ),
     ),
     'zf-rest' => array(
@@ -1456,6 +1466,28 @@ return array(
             'collection_class' => 'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\VistaUsuariosMuroGaleriaCollection',
             'service_name' => 'VistaUsuariosMuroGaleria',
         ),
+        'evt\\V1\\Rest\\VistaEventosBusqueda\\Controller' => array(
+            'listener' => 'evt\\V1\\Rest\\VistaEventosBusqueda\\VistaEventosBusquedaResource',
+            'route_name' => 'evt.rest.vista-eventos-busqueda',
+            'route_identifier_name' => 'vista_eventos_busqueda_id',
+            'collection_name' => 'vista_eventos_busqueda',
+            'entity_http_methods' => array(
+                0 => 'GET',
+                1 => 'PATCH',
+                2 => 'PUT',
+                3 => 'DELETE',
+            ),
+            'collection_http_methods' => array(
+                0 => 'GET',
+                1 => 'POST',
+            ),
+            'collection_query_whitelist' => array(),
+            'page_size' => 25,
+            'page_size_param' => null,
+            'entity_class' => 'evt\\V1\\Rest\\VistaEventosBusqueda\\VistaEventosBusquedaEntity',
+            'collection_class' => 'evt\\V1\\Rest\\VistaEventosBusqueda\\VistaEventosBusquedaCollection',
+            'service_name' => 'VistaEventosBusqueda',
+        ),
     ),
     'zf-content-negotiation' => array(
         'controllers' => array(
@@ -1505,6 +1537,7 @@ return array(
             'evt\\V1\\Rest\\VistaUsuarioSubcategorias\\Controller' => 'HalJson',
             'evt\\V1\\Rest\\VistaEvento\\Controller' => 'HalJson',
             'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\Controller' => 'HalJson',
+            'evt\\V1\\Rest\\VistaEventosBusqueda\\Controller' => 'HalJson',
         ),
         'accept_whitelist' => array(
             'evt\\V1\\Rest\\Usuarios\\Controller' => array(
@@ -1737,6 +1770,11 @@ return array(
                 1 => 'application/hal+json',
                 2 => 'application/json',
             ),
+            'evt\\V1\\Rest\\VistaEventosBusqueda\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/hal+json',
+                2 => 'application/json',
+            ),
         ),
         'content_type_whitelist' => array(
             'evt\\V1\\Rest\\Usuarios\\Controller' => array(
@@ -1920,6 +1958,10 @@ return array(
                 1 => 'application/json',
             ),
             'evt\\V1\\Rest\\VistaUsuariosMuroGaleria\\Controller' => array(
+                0 => 'application/vnd.evt.v1+json',
+                1 => 'application/json',
+            ),
+            'evt\\V1\\Rest\\VistaEventosBusqueda\\Controller' => array(
                 0 => 'application/vnd.evt.v1+json',
                 1 => 'application/json',
             ),
@@ -2477,6 +2519,18 @@ return array(
                 'entity_identifier_name' => 'caption',
                 'route_name' => 'evt.rest.vista-usuarios-muro-galeria',
                 'route_identifier_name' => 'vista_usuarios_muro_galeria_id',
+                'is_collection' => true,
+            ),
+            'evt\\V1\\Rest\\VistaEventosBusqueda\\VistaEventosBusquedaEntity' => array(
+                'entity_identifier_name' => 'id',
+                'route_name' => 'evt.rest.vista-eventos-busqueda',
+                'route_identifier_name' => 'vista_eventos_busqueda_id',
+                'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
+            ),
+            'evt\\V1\\Rest\\VistaEventosBusqueda\\VistaEventosBusquedaCollection' => array(
+                'entity_identifier_name' => 'id',
+                'route_name' => 'evt.rest.vista-eventos-busqueda',
+                'route_identifier_name' => 'vista_eventos_busqueda_id',
                 'is_collection' => true,
             ),
         ),
@@ -5760,26 +5814,9 @@ return array(
         ),
     ),
     'service_manager' => array(
-        'invokables' => array(),
+        'invokables' => array()
     ),
     'zf-mvc-auth' => array(
-        'authorization' => array(
-            'evt\\V1\\Rest\\VistaEstadoCiudad\\Controller' => array(
-                'collection' => array(
-                    'GET' => false,
-                    'POST' => false,
-                    'PUT' => false,
-                    'PATCH' => false,
-                    'DELETE' => false,
-                ),
-                'entity' => array(
-                    'GET' => false,
-                    'POST' => false,
-                    'PUT' => false,
-                    'PATCH' => false,
-                    'DELETE' => false,
-                ),
-            ),
-        ),
+        'authorization' => array(),
     ),
 );
