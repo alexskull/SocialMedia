@@ -2,7 +2,7 @@
 class View {
     public $model, $title, $body, $view, $lang, $session, $active, 
             $section_title, $routing, $collapsed, $header, $controller, $root;
-    
+    private $errors;
     function __construct() {
         $this->root = "";
         $this->model = new stdClass();
@@ -15,6 +15,7 @@ class View {
         $this->collapsed = false;
         $this->header = "";
         $this->controller = "";
+        $this->errors = array(405,500);
     }
     function set_view($obj, $view = null, $model = null){
         $this->view = $view;
@@ -49,8 +50,8 @@ class View {
             
             $controller = isset($uri[$slashes]) ? $uri[$slashes] : "";
             if ($controller == "") $controller = "principal";
-            if (!file_exists("./controllers/$controller.php")) {
-                return false; 
+            if (!file_exists("./controllers/$controller.php")) { 
+                return  (in_array($controller, $this->errors)) ? $controller : false;
             }
             else {
                 include_once("./controllers/$controller.php");
@@ -106,7 +107,7 @@ class View {
                     return true;
                 }
                 else {
-                    return true;
+                    return $response;
                 }
             }
         }  
